@@ -8,7 +8,6 @@ const SUPABASE_URL = 'https://oksemloetsneadfjqpew.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9rc2VtbG9ldHNuZWFkZmpxcGV3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYxMjk4OTQsImV4cCI6MjA5MTcwNTg5NH0.DZwavTBWbk0pnpmVkMbXfezgsnYygnmbQRyFQ8AgtCU';
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
 const SensiLogo = require('./ff_sensitivity_logo.png');
 
 const MARCAS: string[] = ['Apple', 'Samsung', 'Xiaomi', 'Tecno', 'Infinix', 'Huawei', 'Motorola', 'Honor'];
@@ -64,13 +63,13 @@ const DB_CONFIGS: Record<string, Config> = {
   "iPhone 18 Ultra (2026)": { gen: '200', rojo: '200', x2: '200', x4: '200', dpi: 'Deslizante 120', boton: '35', sup: '0.05s' },
   "Genérica Apple": { gen: '198', rojo: '190', x2: '185', x4: '180', dpi: 'Refinado 115', boton: '50', sup: '0.10s' },
   "Samsung S21 FE": { gen: '190', rojo: '185', x2: '180', x4: '175', dpi: '550', boton: '50', sup: '0.8ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 15.5 cm/s | Dem: 0.05s | 5 Rep)' },
-  "Samsung S21": { gen: '190', rojo: '185', x2: '180', x4: '175', dpi: '560', boton: '50', sup: '0.8ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 18.0 cm/s | Dem: 0.02s | 6 Rep)' },
-  "Samsung S21+": { gen: '192', rojo: '186', x2: '182', x4: '178', dpi: '580', boton: '48', sup: '0.6ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 20.0 cm/s | Dem: 0.02s | 8 Rep)' },
+  "Samsung S21": { gen: '190', rojo: '185', x2: '180', x4: '175', dpi: '560', boton: '50', sup: '0.8ms', velPuntero: 'Al máximo', accesibilidad: 'Escaneo Auto (Vel: 0.40s | Dem: 0.20s | 2 Rep)' },
+  "Samsung S21+": { gen: '192', rojo: '186', x2: '182', x4: '178', dpi: '580', boton: '48', sup: '0.6ms', velPuntero: 'Al máximo', accesibilidad: 'Escaneo Auto (Vel: 0.30s | Dem: 0.15s | 3 Rep)' },
   "Samsung S21 Ultra": { gen: '194', rojo: '188', x2: '185', x4: '180', dpi: '600', boton: '46', sup: '0.6ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 25.0 cm/s | Dem: 0.01s | 10 Rep)' },
   "Samsung S22": { gen: '192', rojo: '188', x2: '182', x4: '178', dpi: '580', boton: '48', sup: '0.6ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 22.0 cm/s | Dem: 0.01s | 8 Rep)' },
-  "Samsung S22+": { gen: '194', rojo: '190', x2: '185', x4: '180', dpi: '600', boton: '46', sup: '0.5ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 26.5 cm/s | Dem: 0.01s | 10 Rep)' },
+  "Samsung S22+": { gen: '194', rojo: '190', x2: '185', x4: '180', dpi: '600', boton: '46', sup: '0.5ms', velPuntero: 'Al máximo', accesibilidad: 'Escaneo Auto (Vel: 0.20s | Dem: 0.10s | 4 Rep)' },
   "Samsung S22 Ultra": { gen: '196', rojo: '192', x2: '188', x4: '182', dpi: '620', boton: '45', sup: '0.5ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 31.0 cm/s | Dem: 0.00s | 15 Rep)' },
-  "Samsung S23 FE": { gen: '194', rojo: '190', x2: '185', x4: '180', dpi: '600', boton: '46', sup: '0.6ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 24.0 cm/s | Dem: 0.01s | 10 Rep)' },
+  "Samsung S23 FE": { gen: '194', rojo: '190', x2: '185', x4: '180', dpi: '600', boton: '46', sup: '0.6ms', velPuntero: 'Al máximo', accesibilidad: 'Escaneo Auto (Vel: 0.15s | Dem: 0.10s | 3 Rep)' },
   "Samsung S23": { gen: '195', rojo: '192', x2: '188', x4: '182', dpi: '620', boton: '45', sup: '0.5ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 28.0 cm/s | Dem: 0.00s | 12 Rep)' },
   "Samsung S23+": { gen: '196', rojo: '194', x2: '190', x4: '185', dpi: '640', boton: '44', sup: '0.4ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 33.5 cm/s | Dem: 0.00s | 15 Rep)' },
   "Samsung S23 Ultra": { gen: '198', rojo: '196', x2: '192', x4: '188', dpi: '680', boton: '42', sup: '0.3ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 45.0 cm/s | Dem: 0.00s | Infinity)' },
@@ -81,7 +80,7 @@ const DB_CONFIGS: Record<string, Config> = {
   "Samsung S25+": { gen: '200', rojo: '198', x2: '195', x4: '190', dpi: '700', boton: '41', sup: '0.1ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 60.0 cm/s | Dem: 0.00s | Infinity)' },
   "Samsung S25 Ultra": { gen: '200', rojo: '200', x2: '198', x4: '194', dpi: '720', boton: '40', sup: 'Desactivado', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 85.0 cm/s | Dem: 0.00s | Infinity)' },
   "Samsung S26 Ultra": { gen: '200', rojo: '200', x2: '200', x4: '198', dpi: '750', boton: '38', sup: 'Desactivado', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 100.0 cm/s | Dem: 0.00s | Infinity)' },
-  "Samsung A34 5G": { gen: '190', rojo: '185', x2: '180', x4: '175', dpi: '550', boton: '50', sup: '0.8ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 9.5 cm/s | Dem: 0.10s | 4 Rep)' },
+  "Samsung A34 5G": { gen: '190', rojo: '185', x2: '180', x4: '175', dpi: '550', boton: '50', sup: '0.8ms', velPuntero: 'Al máximo', accesibilidad: 'Escaneo Auto (Vel: 0.60s | Dem: 0.40s | 2 Rep)' },
   "Samsung A35 5G": { gen: '192', rojo: '188', x2: '182', x4: '178', dpi: '580', boton: '48', sup: '0.6ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 12.0 cm/s | Dem: 0.08s | 5 Rep)' },
   "Samsung A54 5G": { gen: '194', rojo: '190', x2: '185', x4: '180', dpi: '600', boton: '46', sup: '0.5ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 14.5 cm/s | Dem: 0.05s | 6 Rep)' },
   "Samsung A55 5G": { gen: '196', rojo: '192', x2: '188', x4: '182', dpi: '620', boton: '45', sup: '0.4ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 18.0 cm/s | Dem: 0.02s | 8 Rep)' },
@@ -133,11 +132,11 @@ const DB_CONFIGS: Record<string, Config> = {
   "Infinix Hot 30": { gen: '190', rojo: '185', x2: '180', x4: '175', dpi: '460', boton: '52', sup: '0.8ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 3.00 cm/s | Dem: 0.20s | 3 Rep)' },
   "Infinix Hot 40": { gen: '192', rojo: '188', x2: '182', x4: '178', dpi: '480', boton: '50', sup: '0.7ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 5.50 cm/s | Dem: 0.15s | 4 Rep)' },
   "Infinix Hot 40 Pro": { gen: '195', rojo: '192', x2: '188', x4: '182', dpi: '520', boton: '46', sup: '0.5ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 10.5 cm/s | Dem: 0.08s | 6 Rep)' },
-  "Infinix Hot 50 (2026)": { gen: '198', rojo: '195', x2: '190', x4: '185', dpi: '550', boton: '44', sup: '0.4ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 15.0 cm/s | Dem: 0.05s | 8 Rep)' },
+  "Infinix Hot 50 (2026)": { gen: '198', rojo: '195', x2: '190', x4: '185', dpi: '550', boton: '44', sup: '0.4ms', velPuntero: 'Al máximo', accesibilidad: 'Escaneo Auto (Vel: 0.30s | Dem: 0.20s | 4 Rep)' },
   "Infinix Note 30": { gen: '192', rojo: '188', x2: '182', x4: '178', dpi: '480', boton: '48', sup: '0.8ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 4.50 cm/s | Dem: 0.15s | 4 Rep)' },
-  "Infinix Note 30 Pro": { gen: '195', rojo: '190', x2: '185', x4: '180', dpi: '520', boton: '45', sup: '0.6ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 12.0 cm/s | Dem: 0.08s | 6 Rep)' },
+  "Infinix Note 30 Pro": { gen: '195', rojo: '190', x2: '185', x4: '180', dpi: '520', boton: '45', sup: '0.6ms', velPuntero: 'Al máximo', accesibilidad: 'Escaneo Auto (Vel: 0.40s | Dem: 0.30s | 3 Rep)' },
   "Infinix Note 30 VIP": { gen: '196', rojo: '194', x2: '188', x4: '184', dpi: '550', boton: '44', sup: '0.4ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 18.5 cm/s | Dem: 0.02s | 8 Rep)' },
-  "Infinix Note 40": { gen: '195', rojo: '190', x2: '185', x4: '180', dpi: '520', boton: '46', sup: '0.6ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 14.0 cm/s | Dem: 0.05s | 6 Rep)' },
+  "Infinix Note 40": { gen: '195', rojo: '190', x2: '185', x4: '180', dpi: '520', boton: '46', sup: '0.6ms', velPuntero: 'Al máximo', accesibilidad: 'Escaneo Auto (Vel: 0.30s | Dem: 0.20s | 3 Rep)' },
   "Infinix Note 40 Pro": { gen: '198', rojo: '195', x2: '190', x4: '185', dpi: '580', boton: '43', sup: '0.4ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 24.5 cm/s | Dem: 0.01s | 10 Rep)' },
   "Infinix Note 40 Pro+": { gen: '200', rojo: '196', x2: '192', x4: '188', dpi: '600', boton: '42', sup: '0.2ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 33.0 cm/s | Dem: 0.00s | 15 Rep)' },
   "Infinix Note 50 VIP (2026)": { gen: '200', rojo: '200', x2: '196', x4: '192', dpi: '650', boton: '40', sup: 'Desactivado', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 45.0 cm/s | Dem: 0.00s | Infinity)' },
@@ -155,27 +154,6 @@ const DB_CONFIGS: Record<string, Config> = {
   "Edge 50 Pro": { gen: '200', rojo: '196', x2: '192', x4: '188', dpi: '650', boton: '42', sup: '0.2ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 50.0 cm/s | Dem: 0.00s | Infinity)' },
   "Edge 50 Ultra": { gen: '200', rojo: '200', x2: '196', x4: '192', dpi: '680', boton: '40', sup: 'Desactivado', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 65.0 cm/s | Dem: 0.00s | Infinity)' },
   "Edge 60 Pro (2026)": { gen: '200', rojo: '200', x2: '200', x4: '195', dpi: '700', boton: '38', sup: 'Desactivado', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 85.0 cm/s | Dem: 0.00s | Infinity)' },
-  "Genérica Motorola": { gen: '192', rojo: '188', x2: '182', x4: '178', dpi: '500', boton: '48', sup: '0.6ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 12.0 cm/s | Dem: 0.08s | 5 Rep)' },
-  "Huawei P50": { gen: '192', rojo: '188', x2: '182', x4: '178', dpi: '500', boton: '50', sup: '0.8ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 10.5 cm/s | Dem: 0.10s | 5 Rep)' },
-  "Huawei P50 Pro": { gen: '196', rojo: '192', x2: '188', x4: '182', dpi: '580', boton: '46', sup: '0.5ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 20.0 cm/s | Dem: 0.02s | 8 Rep)' },
-  "Huawei P60": { gen: '196', rojo: '194', x2: '188', x4: '184', dpi: '580', boton: '45', sup: '0.4ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 24.5 cm/s | Dem: 0.01s | 10 Rep)' },
-  "Huawei P60 Pro": { gen: '198', rojo: '196', x2: '192', x4: '188', dpi: '620', boton: '43', sup: '0.2ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 32.0 cm/s | Dem: 0.00s | 15 Rep)' },
-  "Huawei P70": { gen: '198', rojo: '196', x2: '192', x4: '188', dpi: '600', boton: '44', sup: '0.3ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 38.0 cm/s | Dem: 0.00s | 15 Rep)' },
-  "Huawei P70 Pro": { gen: '200', rojo: '198', x2: '196', x4: '192', dpi: '650', boton: '40', sup: 'Desactivado', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 50.0 cm/s | Dem: 0.00s | Infinity)' },
-  "Huawei Mate 50 Pro": { gen: '198', rojo: '194', x2: '190', x4: '186', dpi: '600', boton: '44', sup: '0.4ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 28.5 cm/s | Dem: 0.01s | 12 Rep)' },
-  "Huawei Mate 60 Pro": { gen: '200', rojo: '196', x2: '194', x4: '190', dpi: '650', boton: '42', sup: '0.2ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 45.0 cm/s | Dem: 0.00s | Infinity)' },
-  "Genérica Huawei": { gen: '194', rojo: '190', x2: '185', x4: '180', dpi: '520', boton: '46', sup: '0.5ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 12.0 cm/s | Dem: 0.08s | 5 Rep)' },
-  "Honor 70": { gen: '194', rojo: '188', x2: '182', x4: '178', dpi: '500', boton: '48', sup: '0.6ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 15.0 cm/s | Dem: 0.05s | 6 Rep)' },
-  "Honor 90 Lite": { gen: '192', rojo: '186', x2: '180', x4: '176', dpi: '480', boton: '50', sup: '0.8ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 8.50 cm/s | Dem: 0.10s | 4 Rep)' },
-  "Honor 90": { gen: '196', rojo: '192', x2: '188', x4: '182', dpi: '550', boton: '45', sup: '0.5ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 22.5 cm/s | Dem: 0.02s | 8 Rep)' },
-  "Honor 100": { gen: '196', rojo: '194', x2: '188', x4: '184', dpi: '580', boton: '44', sup: '0.4ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 25.0 cm/s | Dem: 0.01s | 10 Rep)' },
-  "Honor 100 Pro": { gen: '198', rojo: '196', x2: '192', x4: '188', dpi: '620', boton: '42', sup: '0.2ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 35.0 cm/s | Dem: 0.00s | 15 Rep)' },
-  "Honor 200": { gen: '198', rojo: '195', x2: '190', x4: '186', dpi: '600', boton: '43', sup: '0.3ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 30.0 cm/s | Dem: 0.00s | 12 Rep)' },
-  "Honor 200 Pro": { gen: '200', rojo: '198', x2: '194', x4: '190', dpi: '650', boton: '40', sup: '0.1ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 48.0 cm/s | Dem: 0.00s | Infinity)' },
-  "Honor 110 Pro": { gen: '200', rojo: '200', x2: '196', x4: '192', dpi: '680', boton: '40', sup: 'Desactivado', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 60.0 cm/s | Dem: 0.00s | Infinity)' },
-  "Honor 120 Ultra (2026)": { gen: '200', rojo: '200', x2: '200', x4: '198', dpi: '720', boton: '38', sup: 'Desactivado', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 85.0 cm/s | Dem: 0.00s | Infinity)' },
-  "Honor Magic 5 Pro": { gen: '198', rojo: '196', x2: '192', x4: '188', dpi: '650', boton: '42', sup: '0.2ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 38.0 cm/s | Dem: 0.00s | 15 Rep)' },
-  "Honor Magic 6 Pro": { gen: '200', rojo: '200', x2: '196', x4: '192', dpi: '700', boton: '40', sup: 'Desactivado', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 55.0 cm/s | Dem: 0.00s | Infinity)' },
   "Genérica Honor": { gen: '194', rojo: '190', x2: '185', x4: '180', dpi: '520', boton: '46', sup: '0.5ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 14.0 cm/s | Dem: 0.05s | 6 Rep)' }
 };
 
@@ -234,7 +212,7 @@ export default function App() {
 
   useEffect(() => {
     const fetchAportes = async () => {
-      const { data, error } = await supabase.from('comunidad').select('*').order('created_at', { ascending: false });
+      const { data } = await supabase.from('comunidad').select('*').order('created_at', { ascending: false });
       if (data) setComunidadDatos(data as ComAporte[]);
     };
     fetchAportes();
@@ -255,13 +233,6 @@ export default function App() {
   useEffect(() => { AsyncStorage.setItem('@favs', JSON.stringify(favoritos)); }, [favoritos]);
   useEffect(() => { AsyncStorage.setItem('@votes', JSON.stringify(userVotes)); }, [userVotes]);
 
-  const getRecomendaciones = (mod: string) => {
-    const lower = mod.toLowerCase();
-    if (lower.includes('ultra') || lower.includes('pro max') || lower.includes('premier') || lower.includes('vip') || lower.includes('15 pro') || lower.includes('16 pro') || lower.includes('17 pro') || lower.includes('14 pro') || lower.includes('s24') || lower.includes('s25') || lower.includes('s26')) return { graf: 'Ultra / Max', fps: 'Altos', hud: '3-4 Dedos' };
-    if (lower.includes('pro') || lower.includes('plus') || lower.includes('13') || lower.includes('s22') || lower.includes('s23') || lower.includes('edge 50')) return { graf: 'Estándar', fps: 'Altos', hud: '3 Dedos' };
-    return { graf: 'Suave', fps: 'Normales', hud: '2 Dedos' };
-  };
-
   const buscarConfiguracion = (nombre: string) => {
     const term = nombre.trim();
     if (!term) return;
@@ -276,7 +247,7 @@ export default function App() {
       setDpi(config.dpi);
       setBoton(config.boton);
       setSupresor(config.sup);
-      setVelPuntero(config.velPuntero || (isAppleDevice ? 'N/A' : 'A la mitad'));
+      setVelPuntero(config.velPuntero || (isAppleDevice ? 'N/A' : 'Al máximo'));
       setAccesibilidad(config.accesibilidad || (isAppleDevice ? 'N/A' : 'Desactivado'));
       setConfigCargada(true); setConfigNoEncontrada(false); setModelo(keyMatch || term);
     } else {
@@ -287,37 +258,6 @@ export default function App() {
   const seleccionarMarca = (marca: string) => {
     setMarcaActiva(marcaActiva === marca ? '' : marca);
     setConfigCargada(false); setConfigNoEncontrada(false); setModelo('');
-  };
-
-  const gestionarVoto = async (id: number, modeloItem: string, tipo: 'like' | 'dislike') => {
-    const currentVote = userVotes[id];
-    if (tipo === 'like' && currentVote !== 'like') {
-      const yaDioLike = comunidadDatos.find(item => item.modelo === modeloItem && userVotes[item.id] === 'like');
-      if (yaDioLike) { showToast("Solo 1 Like por dispositivo"); return; }
-    }
-
-    let likesUpdate = 0;
-    let dislikesUpdate = 0;
-
-    setComunidadDatos(prev => prev.map(item => {
-      if (item.id === id) {
-        let { likes, dislikes } = item;
-        if (currentVote === tipo) {
-          tipo === 'like' ? likes-- : dislikes--;
-          const nv = { ...userVotes }; delete nv[id]; setUserVotes(nv);
-        } else {
-          if (tipo === 'like') { likes++; if (currentVote === 'dislike') dislikes--; }
-          else { dislikes++; if (currentVote === 'like') likes--; }
-          setUserVotes({ ...userVotes, [id]: tipo });
-        }
-        likesUpdate = likes;
-        dislikesUpdate = dislikes;
-        return { ...item, likes, dislikes };
-      }
-      return item;
-    }));
-
-    await supabase.from('comunidad').update({ likes: likesUpdate, dislikes: dislikesUpdate }).eq('id', id);
   };
 
   const guardarAporte = async () => {
@@ -332,37 +272,28 @@ export default function App() {
       dpi: isAppleDevice ? `${form.tipoApple} ${form.dpiValor}` : (form.dpi || '500'),
       boton: form.boton,
       sup: form.supresor || '0.5ms',
-      velPuntero: isAppleDevice ? 'N/A' : (form.velPuntero || 'A la mitad'),
+      "velPuntero": isAppleDevice ? 'N/A' : (form.velPuntero || 'Al máximo'),
       accesibilidad: isAppleDevice ? 'N/A' : (form.accesibilidad || 'Desactivado'),
-      autor: form.autor,
-      likes: 0,
-      dislikes: 0
+      autor: form.autor
     };
 
     const { data, error } = await supabase.from('comunidad').insert([nuevoAporte]).select();
-
     if (data) {
       AsyncStorage.setItem('@autor', form.autor);
       setComunidadDatos([data[0] as ComAporte, ...comunidadDatos]);
       setMostrarFormulario(false);
-      showToast("Aporte guardado en la nube");
+      showToast("¡Aporte compartido!");
     } else {
-      showToast("Error al guardar");
+      showToast("Error en base de datos");
     }
   };
 
   const toggleFav = (idItem: string) => {
     setFavoritos(prev => {
-      if (prev.includes(idItem)) { showToast("Eliminado de Favoritos"); return prev.filter(i => i !== idItem); }
-      showToast("Añadido a Favoritos"); return [...prev, idItem];
+      if (prev.includes(idItem)) { showToast("Quitado de Favoritos"); return prev.filter(i => i !== idItem); }
+      showToast("⭐ ¡Favorito!"); return [...prev, idItem];
     });
   };
-
-  const dataComunidadRender = [...comunidadDatos]
-    .filter(i => i.modelo.toLowerCase().includes(busquedaComunidad.toLowerCase()))
-    .sort((a, b) => filtroCom === 'top' ? b.likes - a.likes : b.id - a.id);
-
-  const recom = getRecomendaciones(modelo);
 
   return (
     <View style={styles.container}>
@@ -373,6 +304,7 @@ export default function App() {
       )}
 
       <View style={styles.header}><Image source={SensiLogo} style={styles.logo} /><Text style={styles.title}>SENSIBILIDAFF</Text></View>
+      
       <View style={styles.tabContainer}>
         <TouchableOpacity style={[styles.tab, tab === 'oficial' && styles.tabActive]} onPress={() => setTab('oficial')}><Text style={[styles.tabText, tab === 'oficial' && styles.tabTextActive]}>OFICIAL</Text></TouchableOpacity>
         <TouchableOpacity style={[styles.tab, tab === 'comunidad' && styles.tabActive]} onPress={() => setTab('comunidad')}><Text style={[styles.tabText, tab === 'comunidad' && styles.tabTextActive]}>COMUNIDAD</Text></TouchableOpacity>
@@ -393,7 +325,7 @@ export default function App() {
             </View>
 
             {marcaActiva === '' ? (
-              <TextInput style={styles.input} placeholder="Busca tu modelo oficial..." placeholderTextColor="#666" value={modelo} onChangeText={(t) => { setModelo(t); buscarConfiguracion(t); }} />
+              <TextInput style={styles.input} placeholder="Busca tu modelo..." placeholderTextColor="#666" value={modelo} onChangeText={(t) => { setModelo(t); buscarConfiguracion(t); }} />
             ) : (
               <View style={styles.dropdown}>
                 <ScrollView nestedScrollEnabled={true} style={{ maxHeight: 180 }}>
@@ -408,62 +340,30 @@ export default function App() {
               <View style={styles.card}>
                 <View style={styles.comHeader}>
                   <Text style={styles.label}>{modelo.toUpperCase()}</Text>
-                  <TouchableOpacity onPress={() => toggleFav(modelo)}><Text style={{fontSize: 20}}>{favoritos.includes(modelo) ? '⭐' : '☆'}</Text></TouchableOpacity>
+                  <TouchableOpacity onPress={() => toggleFav(modelo)}><Text style={{fontSize: 22}}>{favoritos.includes(modelo) ? '⭐' : '☆'}</Text></TouchableOpacity>
                 </View>
-                
-                <View style={styles.recomBox}>
-                  <Text style={styles.recomText}>🎮 Gráficos: {recom.graf} | FPS: {recom.fps}</Text>
-                  <Text style={styles.recomText}>🖐️ Recomendado para: {recom.hud}</Text>
-                </View>
-
                 <View style={styles.row}>
-                  <View><Text style={styles.text}>General: <Text style={styles.val}>{sensi.gen}</Text></Text><Text style={styles.text}>Punto Rojo: <Text style={styles.val}>{sensi.rojo}</Text></Text></View>
-                  <View><Text style={styles.text}>Mira x2: <Text style={styles.val}>{sensi.x2}</Text></Text><Text style={styles.text}>Mira x4: <Text style={styles.val}>{sensi.x4}</Text></Text></View>
+                  <View><Text style={styles.text}>General: <Text style={styles.val}>{sensi.gen}</Text></Text><Text style={styles.text}>Mira x2: <Text style={styles.val}>{sensi.x2}</Text></Text></View>
+                  <View><Text style={styles.text}>Rojo: <Text style={styles.val}>{sensi.rojo}</Text></Text><Text style={styles.text}>Mira x4: <Text style={styles.val}>{sensi.x4}</Text></Text></View>
                 </View>
                 <View style={styles.divider} />
-                <Text style={styles.text}>{esApple ? 'Ajuste Interno' : 'DPI'}: <Text style={styles.val}>{dpi}</Text></Text>
+                <Text style={styles.text}>{esApple ? 'Ajuste' : 'DPI'}: <Text style={styles.val}>{dpi}</Text></Text>
                 <Text style={styles.text}>Botón: <Text style={styles.val}>{boton}%</Text></Text>
-                <Text style={styles.text}>{esApple ? 'Control Botón' : 'Supresor'}: <Text style={styles.val}>{supresor}</Text></Text>
-                {!esApple && (
-                  <>
-                    <Text style={styles.text}>Vel. Puntero: <Text style={styles.val}>{velPuntero}</Text></Text>
-                    <Text style={styles.text}>Interruptores: <Text style={styles.val}>{accesibilidad}</Text></Text>
-                  </>
-                )}
-                <TouchableOpacity style={styles.btnCopiar} onPress={() => { Clipboard.setString(`Sensi: ${sensi.gen} | DPI: ${dpi}`); showToast("Copiado al portapapeles"); }}><Text style={styles.btnText}>COPIAR CONFIG</Text></TouchableOpacity>
+                <Text style={styles.text}>Puntero: <Text style={styles.val}>{velPuntero}</Text></Text>
+                <Text style={styles.text}>Interruptores: <Text style={styles.val}>{accesibilidad}</Text></Text>
+                <TouchableOpacity style={styles.btnCopiar} onPress={() => { Clipboard.setString(`Config: ${sensi.gen} | DPI: ${dpi}`); showToast("Copiado"); }}><Text style={styles.btnText}>COPIAR</Text></TouchableOpacity>
               </View>
             )}
-
-            {configNoEncontrada && (
-              <View style={styles.errorBox}>
-                <Text style={styles.errorText}>Aún no hay configuración oficial para "{modelo}".</Text>
-                <Text style={styles.errorSubText}>Prueba con otra variante.</Text>
-              </View>
-            )}
+            {configNoEncontrada && <Text style={styles.errorText}>No oficial para "{modelo}" aún.</Text>}
           </ScrollView>
         ) : tab === 'comunidad' ? (
-          <ScrollView style={styles.cardCom} contentContainerStyle={{ paddingBottom: 30 }}>
+          <ScrollView style={styles.cardCom}>
             {!mostrarFormulario ? (
               <>
-                <TextInput style={styles.inputCom} placeholder="Filtrar por modelo..." placeholderTextColor="#666" value={busquedaComunidad} onChangeText={setBusquedaComunidad} />
-                
-                <View style={styles.filterRow}>
-                  <TouchableOpacity style={[styles.filterBtn, filtroCom === 'top' && styles.filterBtnAct]} onPress={() => setFiltroCom('top')}><Text style={styles.filterText}>🔥 Más Votados</Text></TouchableOpacity>
-                  <TouchableOpacity style={[styles.filterBtn, filtroCom === 'reciente' && styles.filterBtnAct]} onPress={() => setFiltroCom('reciente')}><Text style={styles.filterText}>🕒 Recientes</Text></TouchableOpacity>
-                </View>
-
-                {dataComunidadRender.map((item) => (
+                {comunidadDatos.map((item) => (
                   <View key={item.id} style={styles.comItem}>
-                    <View style={styles.comHeader}>
-                      <Text style={styles.comModelo}>{item.modelo}</Text>
-                      <View style={styles.votes}>
-                        <TouchableOpacity onPress={() => toggleFav(item.id.toString())} style={{marginRight: 10}}><Text style={{fontSize: 16}}>{favoritos.includes(item.id.toString()) ? '⭐' : '☆'}</Text></TouchableOpacity>
-                        <TouchableOpacity style={[styles.voteBtn, userVotes[item.id] === 'like' && styles.activeLike]} onPress={() => gestionarVoto(item.id, item.modelo, 'like')}><Text style={styles.voteText}>👍 {item.likes}</Text></TouchableOpacity>
-                        <TouchableOpacity style={[styles.voteBtn, userVotes[item.id] === 'dislike' && styles.activeDislike]} onPress={() => gestionarVoto(item.id, item.modelo, 'dislike')}><Text style={styles.voteText}>👎 {item.dislikes}</Text></TouchableOpacity>
-                      </View>
-                    </View>
-                    <Text style={styles.comSensi}>General: {item.gen} | {item.modelo.includes('Apple') ? 'Ajuste' : 'DPI'}: {item.dpi}</Text>
-                    <Text style={styles.comAutor}>Por: {item.autor}</Text>
+                    <Text style={styles.comModelo}>{item.modelo}</Text>
+                    <Text style={styles.comSensi}>Gen: {item.gen} | Por: {item.autor}</Text>
                     <View style={styles.dividerSmall} />
                   </View>
                 ))}
@@ -471,111 +371,28 @@ export default function App() {
               </>
             ) : (
               <View>
-                <Text style={styles.label}>NUEVO APORTE A LA COMUNIDAD</Text>
-                <TextInput style={styles.formInput} placeholder="Tu Nombre/Alias" placeholderTextColor="#666" value={form.autor} onChangeText={(t) => setForm({ ...form, autor: t })} />
-                <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ marginBottom: 10 }}>
-                  {MARCAS.map((m) => (
-                    <TouchableOpacity key={m} style={[styles.marcaBtn, form.marca === m && styles.marcaBtnActiva]} onPress={() => setForm({ ...form, marca: m })}>
-                      <Text style={[styles.marcaText, form.marca === m && styles.marcaTextActiva]}>{m}</Text>
-                    </TouchableOpacity>
-                  ))}
-                </ScrollView>
-                <TextInput style={styles.formInput} placeholder="Modelo Exacto (Ej: 17 Pro Max)" placeholderTextColor="#666" value={form.modelo} onChangeText={(t) => setForm({ ...form, modelo: t })} />
-                <View style={styles.row}>
-                  <TextInput style={[styles.formInput, { flex: 1, marginRight: 5 }]} placeholder="General" placeholderTextColor="#666" keyboardType="numeric" value={form.gen} onChangeText={(t) => setForm({ ...form, gen: t })} />
-                  <TextInput style={[styles.formInput, { flex: 1, marginLeft: 5 }]} placeholder="Punto Rojo" placeholderTextColor="#666" keyboardType="numeric" value={form.rojo} onChangeText={(t) => setForm({ ...form, rojo: t })} />
-                </View>
-                <View style={styles.row}>
-                  <TextInput style={[styles.formInput, { flex: 1, marginRight: 5 }]} placeholder="Mira x2" placeholderTextColor="#666" keyboardType="numeric" value={form.x2} onChangeText={(t) => setForm({ ...form, x2: t })} />
-                  <TextInput style={[styles.formInput, { flex: 1, marginLeft: 5 }]} placeholder="Mira x4" placeholderTextColor="#666" keyboardType="numeric" value={form.x4} onChangeText={(t) => setForm({ ...form, x4: t })} />
-                </View>
-
-                <View style={styles.dividerSmall} />
-
-                {form.marca === 'Apple' ? (
-                  <View>
-                    <Text style={[styles.label, { marginBottom: 5 }]}>AJUSTES APPLE</Text>
-                    <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ marginBottom: 10 }}>
-                      {['Refinado', 'Deslizante', 'Sencillo'].map(tipo => (
-                        <TouchableOpacity key={tipo} style={[styles.marcaBtn, form.tipoApple === tipo && styles.marcaBtnActiva]} onPress={() => setForm({ ...form, tipoApple: tipo })}>
-                          <Text style={[styles.marcaText, form.tipoApple === tipo && styles.marcaTextActiva]}>{tipo}</Text>
-                        </TouchableOpacity>
-                      ))}
-                    </ScrollView>
-                    <View style={styles.row}>
-                      <TextInput style={[styles.formInput, { flex: 1, marginRight: 4 }]} placeholder="Valor Ajuste" placeholderTextColor="#666" keyboardType="numeric" value={form.dpiValor} onChangeText={(t) => setForm({ ...form, dpiValor: t })} />
-                      <TextInput style={[styles.formInput, { flex: 1, marginHorizontal: 4 }]} placeholder="Botón %" placeholderTextColor="#666" keyboardType="numeric" value={form.boton} onChangeText={(t) => setForm({ ...form, boton: t })} />
-                      <TextInput style={[styles.formInput, { flex: 1, marginLeft: 4 }]} placeholder="Ctrl. Botón" placeholderTextColor="#666" value={form.supresor} onChangeText={(t) => setForm({ ...form, supresor: t })} />
-                    </View>
-                  </View>
-                ) : (
-                  <View>
-                    <Text style={[styles.label, { marginBottom: 5 }]}>AJUSTES ANDROID</Text>
-                    <View style={styles.row}>
-                      <TextInput style={[styles.formInput, { flex: 1, marginRight: 4 }]} placeholder="DPI" placeholderTextColor="#666" keyboardType="numeric" value={form.dpi} onChangeText={(t) => setForm({ ...form, dpi: t })} />
-                      <TextInput style={[styles.formInput, { flex: 1, marginHorizontal: 4 }]} placeholder="Botón %" placeholderTextColor="#666" keyboardType="numeric" value={form.boton} onChangeText={(t) => setForm({ ...form, boton: t })} />
-                      <TextInput style={[styles.formInput, { flex: 1, marginLeft: 4 }]} placeholder="Supresor" placeholderTextColor="#666" value={form.supresor} onChangeText={(t) => setForm({ ...form, supresor: t })} />
-                    </View>
-                    <View style={styles.row}>
-                      <TextInput style={[styles.formInput, { flex: 1, marginRight: 4 }]} placeholder="Vel. Puntero" placeholderTextColor="#666" value={form.velPuntero} onChangeText={(t) => setForm({ ...form, velPuntero: t })} />
-                      <TextInput style={[styles.formInput, { flex: 1, marginLeft: 4 }]} placeholder="Acc. Interruptores" placeholderTextColor="#666" value={form.accesibilidad} onChangeText={(t) => setForm({ ...form, accesibilidad: t })} />
-                    </View>
-                  </View>
-                )}
-
-                <View style={styles.btnGroup}>
-                  <TouchableOpacity style={[styles.button, { flex: 1, marginRight: 5, backgroundColor: '#333' }]} onPress={() => setMostrarFormulario(false)}>
-                    <Text style={styles.buttonText}>CANCELAR</Text>
-                  </TouchableOpacity>
-                  <TouchableOpacity style={[styles.button, { flex: 1, marginLeft: 5 }]} onPress={guardarAporte}>
-                    <Text style={styles.buttonText}>GUARDAR</Text>
-                  </TouchableOpacity>
-                </View>
+                <TextInput style={styles.formInput} placeholder="Alias" placeholderTextColor="#666" value={form.autor} onChangeText={(t) => setForm({ ...form, autor: t })} />
+                <TextInput style={styles.formInput} placeholder="Modelo" placeholderTextColor="#666" value={form.modelo} onChangeText={(t) => setForm({ ...form, modelo: t })} />
+                <TextInput style={styles.formInput} placeholder="Sensi Gen" placeholderTextColor="#666" keyboardType="numeric" value={form.gen} onChangeText={(t) => setForm({ ...form, gen: t })} />
+                <TouchableOpacity style={styles.button} onPress={guardarAporte}><Text style={styles.buttonText}>GUARDAR</Text></TouchableOpacity>
+                <TouchableOpacity onPress={() => setMostrarFormulario(false)}><Text style={{color: '#666', textAlign: 'center', marginTop: 10}}>CANCELAR</Text></TouchableOpacity>
               </View>
             )}
           </ScrollView>
         ) : (
           <ScrollView style={styles.cardCom}>
-            <Text style={styles.label}>TUS CONFIGURACIONES FAVORITAS</Text>
-            {favoritos.length === 0 ? (
-              <Text style={{color: '#666', textAlign: 'center', marginTop: 20}}>No tienes favoritos guardados.</Text>
-            ) : (
-              favoritos.map(fav => {
-                const ofi = DB_CONFIGS[fav];
-                if(ofi) {
-                  return (
-                    <View key={fav} style={styles.comItem}>
-                      <View style={styles.comHeader}>
-                        <Text style={styles.comModelo}>[Oficial] {fav}</Text>
-                        <TouchableOpacity onPress={() => toggleFav(fav)}><Text style={{fontSize: 16}}>⭐</Text></TouchableOpacity>
-                      </View>
-                      <Text style={styles.comSensi}>Gen: {ofi.gen} | DPI/Ajuste: {ofi.dpi}</Text>
-                      <View style={styles.dividerSmall} />
-                    </View>
-                  )
-                }
-                const comItem = comunidadDatos.find(c => c.id.toString() === fav);
-                if(comItem) {
-                  return (
-                    <View key={fav} style={styles.comItem}>
-                      <View style={styles.comHeader}>
-                        <Text style={styles.comModelo}>[Comunidad] {comItem.modelo}</Text>
-                        <TouchableOpacity onPress={() => toggleFav(fav)}><Text style={{fontSize: 16}}>⭐</Text></TouchableOpacity>
-                      </View>
-                      <Text style={styles.comSensi}>Gen: {comItem.gen} | Por: {comItem.autor}</Text>
-                      <View style={styles.dividerSmall} />
-                    </View>
-                  )
-                }
-                return null;
-              })
-            )}
+            <Text style={styles.label}>FAVORITOS</Text>
+            {favoritos.map(fav => <Text key={fav} style={styles.comModelo}>⭐ {fav}</Text>)}
           </ScrollView>
         )}
       </View>
+
       <View style={styles.footerBadge}>
-        <Text style={styles.footerText}>CREADO POR <Text style={styles.footerHighlight}>BETADO</Text></Text>
-        <Text style={styles.footerSub}>🔥 YouTube & TikTok 🔥</Text>
+        <View style={styles.neonContainer}>
+          <Text style={styles.footerText}>CREADO POR <Text style={styles.footerHighlight}>BETADO</Text></Text>
+          <View style={styles.glowLine} />
+          <Text style={styles.footerSub}>🔥 YouTube & TikTok 🔥</Text>
+        </View>
       </View>
     </View>
   );
@@ -584,63 +401,89 @@ export default function App() {
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#050505', paddingTop: 50 },
   contentContainer: { flex: 1, alignItems: 'center' },
-  footerBadge: { padding: 12, alignItems: 'center', backgroundColor: '#0A0A0A', width: '100%', borderTopWidth: 2, borderTopColor: '#FF0000' },
-  footerText: { color: '#FFF', fontSize: 14, fontWeight: '900', letterSpacing: 1 },
-  footerHighlight: { color: '#FF0000', textShadowColor: '#FF0000', textShadowOffset: { width: 0, height: 0 }, textShadowRadius: 10 },
-  footerSub: { color: '#888', fontSize: 9, fontWeight: 'bold', marginTop: 2, letterSpacing: 2 },
-  toast: { position: 'absolute', top: 50, left: '10%', right: '10%', zIndex: 100, backgroundColor: '#00FF0033', padding: 10, borderRadius: 10, borderWidth: 1, borderColor: '#00FF00', alignItems: 'center' },
-  toastText: { color: '#FFF', fontWeight: 'bold' },
   header: { alignItems: 'center', marginBottom: 10 },
   logo: { width: 85, height: 85, borderRadius: 18 },
-  title: { fontSize: 18, fontWeight: '900', color: '#FF0000', marginTop: 5, letterSpacing: 2 },
+  title: { fontSize: 20, fontWeight: '900', color: '#FF0000', marginTop: 5, letterSpacing: 3 },
   tabContainer: { flexDirection: 'row', width: '90%', marginVertical: 10, alignSelf: 'center' },
   tab: { flex: 1, padding: 10, alignItems: 'center', borderBottomWidth: 2, borderBottomColor: '#222' },
   tabActive: { borderBottomColor: '#FF0000' },
   tabText: { color: '#666', fontWeight: 'bold', fontSize: 13 },
   tabTextActive: { color: '#FF0000' },
   marcasWrapper: { height: 45, marginBottom: 10, width: '100%' },
-  marcasContainer: { paddingHorizontal: 15, flexDirection: 'row', alignItems: 'center' },
+  marcasContainer: { paddingHorizontal: 15, flexDirection: 'row' },
   marcaBtn: { backgroundColor: '#111', paddingVertical: 6, paddingHorizontal: 14, borderRadius: 20, marginRight: 8, borderWidth: 1, borderColor: '#333' },
   marcaBtnActiva: { backgroundColor: '#FF0000', borderColor: '#FF0000' },
   marcaText: { color: '#888', fontWeight: 'bold', fontSize: 11 },
   marcaTextActiva: { color: '#FFF' },
-  input: { width: '90%', backgroundColor: '#111', color: '#FFF', padding: 12, borderRadius: 8, borderWidth: 1, borderColor: '#222' },
+  input: { width: '90%', backgroundColor: '#111', color: '#FFF', padding: 12, borderRadius: 10, borderWidth: 1, borderColor: '#222' },
   dropdown: { width: '90%', backgroundColor: '#0A0A0A', borderRadius: 10, borderWidth: 1, borderColor: '#333', padding: 10 },
   dropItem: { padding: 12, borderBottomWidth: 1, borderBottomColor: '#1A1A1A' },
   dropText: { color: '#AAA', fontSize: 13 },
-  card: { width: '90%', backgroundColor: '#111', borderRadius: 20, padding: 20, marginTop: 10, borderWidth: 1, borderColor: '#FF000022' },
-  recomBox: { backgroundColor: '#222', padding: 10, borderRadius: 8, marginBottom: 10, borderWidth: 1, borderColor: '#444' },
-  recomText: { color: '#AAA', fontSize: 11, fontWeight: 'bold' },
-  errorBox: { width: '90%', backgroundColor: '#1A0000', borderRadius: 15, padding: 25, marginTop: 20, borderWidth: 1, borderColor: '#FF000033', alignItems: 'center' },
-  errorText: { color: '#FF8888', fontWeight: 'bold', textAlign: 'center', fontSize: 13 },
-  errorSubText: { color: '#555', fontSize: 11, marginTop: 5 },
-  label: { color: '#FF0000', fontWeight: 'bold', marginBottom: 10, fontSize: 13 },
+  card: { width: '90%', backgroundColor: '#111', borderRadius: 20, padding: 20, marginTop: 10, borderWidth: 1, borderColor: '#FF000033' },
+  label: { color: '#FF0000', fontWeight: '900', marginBottom: 10, fontSize: 15 },
   text: { color: '#AAA', marginBottom: 4, fontSize: 13 },
   val: { color: '#FFF', fontWeight: 'bold' },
   row: { flexDirection: 'row', justifyContent: 'space-between' },
   divider: { height: 1, backgroundColor: '#222', marginVertical: 10 },
   dividerSmall: { height: 1, backgroundColor: '#1A1A1A', marginTop: 10 },
-  btnCopiar: { backgroundColor: '#FF0000', padding: 14, borderRadius: 10, alignItems: 'center', marginTop: 15 },
+  btnCopiar: { backgroundColor: '#FF0000', padding: 12, borderRadius: 10, alignItems: 'center', marginTop: 15 },
   btnShare: { backgroundColor: '#FF0000', padding: 14, borderRadius: 10, alignItems: 'center', marginTop: 20 },
   btnText: { color: '#FFF', fontWeight: 'bold', fontSize: 12 },
-  cardCom: { width: '90%', backgroundColor: '#111', borderRadius: 20, padding: 15, borderWidth: 1, borderColor: '#222', alignSelf: 'center' },
-  filterRow: { flexDirection: 'row', marginBottom: 15 },
-  filterBtn: { flex: 1, backgroundColor: '#1A1A1A', padding: 8, alignItems: 'center', borderWidth: 1, borderColor: '#333' },
-  filterBtnAct: { backgroundColor: '#FF000033', borderColor: '#FF0000' },
-  filterText: { color: '#FFF', fontSize: 11, fontWeight: 'bold' },
+  cardCom: { width: '90%', backgroundColor: '#111', borderRadius: 20, padding: 15, alignSelf: 'center' },
   comItem: { marginBottom: 12 },
-  comHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
   comModelo: { color: '#FFF', fontWeight: 'bold', fontSize: 14 },
-  votes: { flexDirection: 'row', alignItems: 'center' },
-  voteBtn: { backgroundColor: '#1A1A1A', padding: 7, borderRadius: 8, marginLeft: 5, minWidth: 45, alignItems: 'center' },
-  activeLike: { backgroundColor: '#00FF0015', borderColor: '#00FF00', borderWidth: 1 },
-  activeDislike: { backgroundColor: '#FF000015', borderColor: '#FF0000', borderWidth: 1 },
-  voteText: { color: '#FFF', fontSize: 10, fontWeight: 'bold' },
-  comSensi: { color: '#777', fontSize: 12, marginTop: 2 },
-  comAutor: { color: '#444', fontSize: 10 },
-  inputCom: { backgroundColor: '#1A1A1A', color: '#FFF', padding: 10, borderRadius: 8, marginBottom: 15 },
+  comSensi: { color: '#777', fontSize: 12 },
   formInput: { backgroundColor: '#1A1A1A', color: '#FFF', padding: 12, borderRadius: 8, marginBottom: 10, borderWidth: 1, borderColor: '#333' },
   button: { backgroundColor: '#FF0000', padding: 15, borderRadius: 10, alignItems: 'center' },
-  buttonText: { color: '#FFF', fontWeight: '900', fontSize: 13 },
-  btnGroup: { flexDirection: 'row', marginTop: 10 }
+  buttonText: { color: '#FFF', fontWeight: '900' },
+  toast: { position: 'absolute', top: 50, left: '10%', right: '10%', zIndex: 100, backgroundColor: '#FF0000CC', padding: 10, borderRadius: 10, alignItems: 'center' },
+  toastText: { color: '#FFF', fontWeight: 'bold' },
+  errorText: { color: '#666', marginTop: 20 },
+
+  // DISEÑO DE CREADOR BETADO
+  footerBadge: { 
+    paddingVertical: 15, 
+    alignItems: 'center', 
+    backgroundColor: '#000', 
+    width: '100%', 
+    borderTopWidth: 2, 
+    borderTopColor: '#FF0000',
+    shadowColor: "#FF0000",
+    shadowOffset: { width: 0, height: -5 },
+    shadowOpacity: 0.5,
+    shadowRadius: 10,
+    elevation: 20
+  },
+  neonContainer: { alignItems: 'center' },
+  footerText: { 
+    color: '#FFF', 
+    fontSize: 16, 
+    fontWeight: '900', 
+    letterSpacing: 2,
+    textTransform: 'uppercase'
+  },
+  footerHighlight: { 
+    color: '#FF0000', 
+    textShadowColor: '#FF0000', 
+    textShadowOffset: { width: 0, height: 0 }, 
+    textShadowRadius: 15,
+  },
+  glowLine: {
+    width: 100,
+    height: 2,
+    backgroundColor: '#FF0000',
+    marginVertical: 4,
+    borderRadius: 2,
+    shadowColor: "#FF0000",
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 1,
+    shadowRadius: 5,
+  },
+  footerSub: { 
+    color: '#AAA', 
+    fontSize: 10, 
+    fontWeight: 'bold', 
+    marginTop: 2, 
+    letterSpacing: 3 
+  },
 });
