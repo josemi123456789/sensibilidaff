@@ -378,210 +378,218 @@ export default function App() {
         <TouchableOpacity style={[styles.tab, tab === 'favs' && styles.tabActive]} onPress={() => setTab('favs')}><Text style={[styles.tabText, tab === 'favs' && styles.tabTextActive]}>FAVS ⭐</Text></TouchableOpacity>
       </View>
 
-      {tab === 'oficial' ? (
-        <ScrollView style={{ width: '100%' }} contentContainerStyle={{ alignItems: 'center' }}>
-          <View style={styles.marcasWrapper}>
-            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.marcasContainer}>
-              {MARCAS.map((m) => (
-                <TouchableOpacity key={m} style={[styles.marcaBtn, marcaActiva === m && styles.marcaBtnActiva]} onPress={() => seleccionarMarca(m)}>
-                  <Text style={[styles.marcaText, marcaActiva === m && styles.marcaTextActiva]}>{m}</Text>
-                </TouchableOpacity>
-              ))}
-            </ScrollView>
-          </View>
-
-          {marcaActiva === '' ? (
-            <TextInput style={styles.input} placeholder="Busca tu modelo oficial..." placeholderTextColor="#666" value={modelo} onChangeText={(t) => { setModelo(t); buscarConfiguracion(t); }} />
-          ) : (
-            <View style={styles.dropdown}>
-              <ScrollView nestedScrollEnabled={true} style={{ maxHeight: 180 }}>
-                {MODELOS_POR_MARCA[marcaActiva]?.map((mod) => (
-                  <TouchableOpacity key={mod} style={styles.dropItem} onPress={() => buscarConfiguracion(mod)}><Text style={styles.dropText}>{mod}</Text></TouchableOpacity>
-                ))}
-              </ScrollView>
-            </View>
-          )}
-
-          {configCargada && (
-            <View style={styles.card}>
-              <View style={styles.comHeader}>
-                <Text style={styles.label}>{modelo.toUpperCase()}</Text>
-                <TouchableOpacity onPress={() => toggleFav(modelo)}><Text style={{fontSize: 20}}>{favoritos.includes(modelo) ? '⭐' : '☆'}</Text></TouchableOpacity>
-              </View>
-              
-              <View style={styles.recomBox}>
-                <Text style={styles.recomText}>🎮 Gráficos: {recom.graf} | FPS: {recom.fps}</Text>
-                <Text style={styles.recomText}>🖐️ Recomendado para: {recom.hud}</Text>
-              </View>
-
-              <View style={styles.row}>
-                <View><Text style={styles.text}>General: <Text style={styles.val}>{sensi.gen}</Text></Text><Text style={styles.text}>Punto Rojo: <Text style={styles.val}>{sensi.rojo}</Text></Text></View>
-                <View><Text style={styles.text}>Mira x2: <Text style={styles.val}>{sensi.x2}</Text></Text><Text style={styles.text}>Mira x4: <Text style={styles.val}>{sensi.x4}</Text></Text></View>
-              </View>
-              <View style={styles.divider} />
-              <Text style={styles.text}>{esApple ? 'Ajuste Interno' : 'DPI'}: <Text style={styles.val}>{dpi}</Text></Text>
-              <Text style={styles.text}>Botón: <Text style={styles.val}>{boton}%</Text></Text>
-              <Text style={styles.text}>{esApple ? 'Control Botón' : 'Supresor'}: <Text style={styles.val}>{supresor}</Text></Text>
-              {!esApple && (
-                <>
-                  <Text style={styles.text}>Vel. Puntero: <Text style={styles.val}>{velPuntero}</Text></Text>
-                  <Text style={styles.text}>Interruptores: <Text style={styles.val}>{accesibilidad}</Text></Text>
-                </>
-              )}
-              <TouchableOpacity style={styles.btnCopiar} onPress={() => { Clipboard.setString(`Sensi: ${sensi.gen} | DPI: ${dpi}`); showToast("Copiado al portapapeles"); }}><Text style={styles.btnText}>COPIAR CONFIG</Text></TouchableOpacity>
-            </View>
-          )}
-
-          {configNoEncontrada && (
-            <View style={styles.errorBox}>
-              <Text style={styles.errorText}>Aún no hay configuración oficial para "{modelo}".</Text>
-              <Text style={styles.errorSubText}>Prueba con otra variante.</Text>
-            </View>
-          )}
-        </ScrollView>
-      ) : tab === 'comunidad' ? (
-        <ScrollView style={styles.cardCom} contentContainerStyle={{ paddingBottom: 30 }}>
-          {!mostrarFormulario ? (
-            <>
-              <TextInput style={styles.inputCom} placeholder="Filtrar por modelo..." placeholderTextColor="#666" value={busquedaComunidad} onChangeText={setBusquedaComunidad} />
-              
-              <View style={styles.filterRow}>
-                <TouchableOpacity style={[styles.filterBtn, filtroCom === 'top' && styles.filterBtnAct]} onPress={() => setFiltroCom('top')}><Text style={styles.filterText}>🔥 Más Votados</Text></TouchableOpacity>
-                <TouchableOpacity style={[styles.filterBtn, filtroCom === 'reciente' && styles.filterBtnAct]} onPress={() => setFiltroCom('reciente')}><Text style={styles.filterText}>🕒 Recientes</Text></TouchableOpacity>
-              </View>
-
-              {dataComunidadRender.map((item) => (
-                <View key={item.id} style={styles.comItem}>
-                  <View style={styles.comHeader}>
-                    <Text style={styles.comModelo}>{item.modelo}</Text>
-                    <View style={styles.votes}>
-                      <TouchableOpacity onPress={() => toggleFav(item.id.toString())} style={{marginRight: 10}}><Text style={{fontSize: 16}}>{favoritos.includes(item.id.toString()) ? '⭐' : '☆'}</Text></TouchableOpacity>
-                      <TouchableOpacity style={[styles.voteBtn, userVotes[item.id] === 'like' && styles.activeLike]} onPress={() => gestionarVoto(item.id, item.modelo, 'like')}><Text style={styles.voteText}>👍 {item.likes}</Text></TouchableOpacity>
-                      <TouchableOpacity style={[styles.voteBtn, userVotes[item.id] === 'dislike' && styles.activeDislike]} onPress={() => gestionarVoto(item.id, item.modelo, 'dislike')}><Text style={styles.voteText}>👎 {item.dislikes}</Text></TouchableOpacity>
-                    </View>
-                  </View>
-                  <Text style={styles.comSensi}>General: {item.gen} | {item.modelo.includes('Apple') ? 'Ajuste' : 'DPI'}: {item.dpi}</Text>
-                  <Text style={styles.comAutor}>Por: {item.autor}</Text>
-                  <View style={styles.dividerSmall} />
-                </View>
-              ))}
-              <TouchableOpacity style={styles.btnShare} onPress={() => setMostrarFormulario(true)}><Text style={styles.btnText}>COMPARTIR MI SENSI</Text></TouchableOpacity>
-            </>
-          ) : (
-            <View>
-              <Text style={styles.label}>NUEVO APORTE A LA COMUNIDAD</Text>
-              <TextInput style={styles.formInput} placeholder="Tu Nombre/Alias" placeholderTextColor="#666" value={form.autor} onChangeText={(t) => setForm({ ...form, autor: t })} />
-              <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ marginBottom: 10 }}>
+      <View style={styles.contentContainer}>
+        {tab === 'oficial' ? (
+          <ScrollView style={{ width: '100%' }} contentContainerStyle={{ alignItems: 'center' }}>
+            <View style={styles.marcasWrapper}>
+              <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.marcasContainer}>
                 {MARCAS.map((m) => (
-                  <TouchableOpacity key={m} style={[styles.marcaBtn, form.marca === m && styles.marcaBtnActiva]} onPress={() => setForm({ ...form, marca: m })}>
-                    <Text style={[styles.marcaText, form.marca === m && styles.marcaTextActiva]}>{m}</Text>
+                  <TouchableOpacity key={m} style={[styles.marcaBtn, marcaActiva === m && styles.marcaBtnActiva]} onPress={() => seleccionarMarca(m)}>
+                    <Text style={[styles.marcaText, marcaActiva === m && styles.marcaTextActiva]}>{m}</Text>
                   </TouchableOpacity>
                 ))}
               </ScrollView>
-              <TextInput style={styles.formInput} placeholder="Modelo Exacto (Ej: 17 Pro Max)" placeholderTextColor="#666" value={form.modelo} onChangeText={(t) => setForm({ ...form, modelo: t })} />
-              <View style={styles.row}>
-                <TextInput style={[styles.formInput, { flex: 1, marginRight: 5 }]} placeholder="General" placeholderTextColor="#666" keyboardType="numeric" value={form.gen} onChangeText={(t) => setForm({ ...form, gen: t })} />
-                <TextInput style={[styles.formInput, { flex: 1, marginLeft: 5 }]} placeholder="Punto Rojo" placeholderTextColor="#666" keyboardType="numeric" value={form.rojo} onChangeText={(t) => setForm({ ...form, rojo: t })} />
-              </View>
-              <View style={styles.row}>
-                <TextInput style={[styles.formInput, { flex: 1, marginRight: 5 }]} placeholder="Mira x2" placeholderTextColor="#666" keyboardType="numeric" value={form.x2} onChangeText={(t) => setForm({ ...form, x2: t })} />
-                <TextInput style={[styles.formInput, { flex: 1, marginLeft: 5 }]} placeholder="Mira x4" placeholderTextColor="#666" keyboardType="numeric" value={form.x4} onChangeText={(t) => setForm({ ...form, x4: t })} />
-              </View>
-
-              <View style={styles.dividerSmall} />
-
-              {form.marca === 'Apple' ? (
-                <View>
-                  <Text style={[styles.label, { marginBottom: 5 }]}>AJUSTES APPLE</Text>
-                  <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ marginBottom: 10 }}>
-                    {['Refinado', 'Deslizante', 'Sencillo'].map(tipo => (
-                      <TouchableOpacity key={tipo} style={[styles.marcaBtn, form.tipoApple === tipo && styles.marcaBtnActiva]} onPress={() => setForm({ ...form, tipoApple: tipo })}>
-                        <Text style={[styles.marcaText, form.tipoApple === tipo && styles.marcaTextActiva]}>{tipo}</Text>
-                      </TouchableOpacity>
-                    ))}
-                  </ScrollView>
-                  <View style={styles.row}>
-                    <TextInput style={[styles.formInput, { flex: 1, marginRight: 4 }]} placeholder="Valor Ajuste" placeholderTextColor="#666" keyboardType="numeric" value={form.dpiValor} onChangeText={(t) => setForm({ ...form, dpiValor: t })} />
-                    <TextInput style={[styles.formInput, { flex: 1, marginHorizontal: 4 }]} placeholder="Botón %" placeholderTextColor="#666" keyboardType="numeric" value={form.boton} onChangeText={(t) => setForm({ ...form, boton: t })} />
-                    <TextInput style={[styles.formInput, { flex: 1, marginLeft: 4 }]} placeholder="Ctrl. Botón" placeholderTextColor="#666" value={form.supresor} onChangeText={(t) => setForm({ ...form, supresor: t })} />
-                  </View>
-                </View>
-              ) : (
-                <View>
-                  <Text style={[styles.label, { marginBottom: 5 }]}>AJUSTES ANDROID</Text>
-                  <View style={styles.row}>
-                    <TextInput style={[styles.formInput, { flex: 1, marginRight: 4 }]} placeholder="DPI" placeholderTextColor="#666" keyboardType="numeric" value={form.dpi} onChangeText={(t) => setForm({ ...form, dpi: t })} />
-                    <TextInput style={[styles.formInput, { flex: 1, marginHorizontal: 4 }]} placeholder="Botón %" placeholderTextColor="#666" keyboardType="numeric" value={form.boton} onChangeText={(t) => setForm({ ...form, boton: t })} />
-                    <TextInput style={[styles.formInput, { flex: 1, marginLeft: 4 }]} placeholder="Supresor" placeholderTextColor="#666" value={form.supresor} onChangeText={(t) => setForm({ ...form, supresor: t })} />
-                  </View>
-                  <View style={styles.row}>
-                    <TextInput style={[styles.formInput, { flex: 1, marginRight: 4 }]} placeholder="Vel. Puntero" placeholderTextColor="#666" value={form.velPuntero} onChangeText={(t) => setForm({ ...form, velPuntero: t })} />
-                    <TextInput style={[styles.formInput, { flex: 1, marginLeft: 4 }]} placeholder="Acc. Interruptores" placeholderTextColor="#666" value={form.accesibilidad} onChangeText={(t) => setForm({ ...form, accesibilidad: t })} />
-                  </View>
-                </View>
-              )}
-
-              <View style={styles.btnGroup}>
-                <TouchableOpacity style={[styles.button, { flex: 1, marginRight: 5, backgroundColor: '#333' }]} onPress={() => setMostrarFormulario(false)}>
-                  <Text style={styles.buttonText}>CANCELAR</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={[styles.button, { flex: 1, marginLeft: 5 }]} onPress={guardarAporte}>
-                  <Text style={styles.buttonText}>GUARDAR</Text>
-                </TouchableOpacity>
-              </View>
             </View>
-          )}
-        </ScrollView>
-      ) : (
-        <ScrollView style={styles.cardCom}>
-          <Text style={styles.label}>TUS CONFIGURACIONES FAVORITAS</Text>
-          {favoritos.length === 0 ? (
-            <Text style={{color: '#666', textAlign: 'center', marginTop: 20}}>No tienes favoritos guardados.</Text>
-          ) : (
-            favoritos.map(fav => {
-              const ofi = DB_CONFIGS[fav];
-              if(ofi) {
-                return (
-                  <View key={fav} style={styles.comItem}>
+
+            {marcaActiva === '' ? (
+              <TextInput style={styles.input} placeholder="Busca tu modelo oficial..." placeholderTextColor="#666" value={modelo} onChangeText={(t) => { setModelo(t); buscarConfiguracion(t); }} />
+            ) : (
+              <View style={styles.dropdown}>
+                <ScrollView nestedScrollEnabled={true} style={{ maxHeight: 180 }}>
+                  {MODELOS_POR_MARCA[marcaActiva]?.map((mod) => (
+                    <TouchableOpacity key={mod} style={styles.dropItem} onPress={() => buscarConfiguracion(mod)}><Text style={styles.dropText}>{mod}</Text></TouchableOpacity>
+                  ))}
+                </ScrollView>
+              </View>
+            )}
+
+            {configCargada && (
+              <View style={styles.card}>
+                <View style={styles.comHeader}>
+                  <Text style={styles.label}>{modelo.toUpperCase()}</Text>
+                  <TouchableOpacity onPress={() => toggleFav(modelo)}><Text style={{fontSize: 20}}>{favoritos.includes(modelo) ? '⭐' : '☆'}</Text></TouchableOpacity>
+                </View>
+                
+                <View style={styles.recomBox}>
+                  <Text style={styles.recomText}>🎮 Gráficos: {recom.graf} | FPS: {recom.fps}</Text>
+                  <Text style={styles.recomText}>🖐️ Recomendado para: {recom.hud}</Text>
+                </View>
+
+                <View style={styles.row}>
+                  <View><Text style={styles.text}>General: <Text style={styles.val}>{sensi.gen}</Text></Text><Text style={styles.text}>Punto Rojo: <Text style={styles.val}>{sensi.rojo}</Text></Text></View>
+                  <View><Text style={styles.text}>Mira x2: <Text style={styles.val}>{sensi.x2}</Text></Text><Text style={styles.text}>Mira x4: <Text style={styles.val}>{sensi.x4}</Text></Text></View>
+                </View>
+                <View style={styles.divider} />
+                <Text style={styles.text}>{esApple ? 'Ajuste Interno' : 'DPI'}: <Text style={styles.val}>{dpi}</Text></Text>
+                <Text style={styles.text}>Botón: <Text style={styles.val}>{boton}%</Text></Text>
+                <Text style={styles.text}>{esApple ? 'Control Botón' : 'Supresor'}: <Text style={styles.val}>{supresor}</Text></Text>
+                {!esApple && (
+                  <>
+                    <Text style={styles.text}>Vel. Puntero: <Text style={styles.val}>{velPuntero}</Text></Text>
+                    <Text style={styles.text}>Interruptores: <Text style={styles.val}>{accesibilidad}</Text></Text>
+                  </>
+                )}
+                <TouchableOpacity style={styles.btnCopiar} onPress={() => { Clipboard.setString(`Sensi: ${sensi.gen} | DPI: ${dpi}`); showToast("Copiado al portapapeles"); }}><Text style={styles.btnText}>COPIAR CONFIG</Text></TouchableOpacity>
+              </View>
+            )}
+
+            {configNoEncontrada && (
+              <View style={styles.errorBox}>
+                <Text style={styles.errorText}>Aún no hay configuración oficial para "{modelo}".</Text>
+                <Text style={styles.errorSubText}>Prueba con otra variante.</Text>
+              </View>
+            )}
+          </ScrollView>
+        ) : tab === 'comunidad' ? (
+          <ScrollView style={styles.cardCom} contentContainerStyle={{ paddingBottom: 30 }}>
+            {!mostrarFormulario ? (
+              <>
+                <TextInput style={styles.inputCom} placeholder="Filtrar por modelo..." placeholderTextColor="#666" value={busquedaComunidad} onChangeText={setBusquedaComunidad} />
+                
+                <View style={styles.filterRow}>
+                  <TouchableOpacity style={[styles.filterBtn, filtroCom === 'top' && styles.filterBtnAct]} onPress={() => setFiltroCom('top')}><Text style={styles.filterText}>🔥 Más Votados</Text></TouchableOpacity>
+                  <TouchableOpacity style={[styles.filterBtn, filtroCom === 'reciente' && styles.filterBtnAct]} onPress={() => setFiltroCom('reciente')}><Text style={styles.filterText}>🕒 Recientes</Text></TouchableOpacity>
+                </View>
+
+                {dataComunidadRender.map((item) => (
+                  <View key={item.id} style={styles.comItem}>
                     <View style={styles.comHeader}>
-                      <Text style={styles.comModelo}>[Oficial] {fav}</Text>
-                      <TouchableOpacity onPress={() => toggleFav(fav)}><Text style={{fontSize: 16}}>⭐</Text></TouchableOpacity>
+                      <Text style={styles.comModelo}>{item.modelo}</Text>
+                      <View style={styles.votes}>
+                        <TouchableOpacity onPress={() => toggleFav(item.id.toString())} style={{marginRight: 10}}><Text style={{fontSize: 16}}>{favoritos.includes(item.id.toString()) ? '⭐' : '☆'}</Text></TouchableOpacity>
+                        <TouchableOpacity style={[styles.voteBtn, userVotes[item.id] === 'like' && styles.activeLike]} onPress={() => gestionarVoto(item.id, item.modelo, 'like')}><Text style={styles.voteText}>👍 {item.likes}</Text></TouchableOpacity>
+                        <TouchableOpacity style={[styles.voteBtn, userVotes[item.id] === 'dislike' && styles.activeDislike]} onPress={() => gestionarVoto(item.id, item.modelo, 'dislike')}><Text style={styles.voteText}>👎 {item.dislikes}</Text></TouchableOpacity>
+                      </View>
                     </View>
-                    <Text style={styles.comSensi}>Gen: {ofi.gen} | DPI/Ajuste: {ofi.dpi}</Text>
+                    <Text style={styles.comSensi}>General: {item.gen} | {item.modelo.includes('Apple') ? 'Ajuste' : 'DPI'}: {item.dpi}</Text>
+                    <Text style={styles.comAutor}>Por: {item.autor}</Text>
                     <View style={styles.dividerSmall} />
                   </View>
-                )
-              }
-              const comItem = comunidadDatos.find(c => c.id.toString() === fav);
-              if(comItem) {
-                return (
-                  <View key={fav} style={styles.comItem}>
-                    <View style={styles.comHeader}>
-                      <Text style={styles.comModelo}>[Comunidad] {comItem.modelo}</Text>
-                      <TouchableOpacity onPress={() => toggleFav(fav)}><Text style={{fontSize: 16}}>⭐</Text></TouchableOpacity>
+                ))}
+                <TouchableOpacity style={styles.btnShare} onPress={() => setMostrarFormulario(true)}><Text style={styles.btnText}>COMPARTIR MI SENSI</Text></TouchableOpacity>
+              </>
+            ) : (
+              <View>
+                <Text style={styles.label}>NUEVO APORTE A LA COMUNIDAD</Text>
+                <TextInput style={styles.formInput} placeholder="Tu Nombre/Alias" placeholderTextColor="#666" value={form.autor} onChangeText={(t) => setForm({ ...form, autor: t })} />
+                <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ marginBottom: 10 }}>
+                  {MARCAS.map((m) => (
+                    <TouchableOpacity key={m} style={[styles.marcaBtn, form.marca === m && styles.marcaBtnActiva]} onPress={() => setForm({ ...form, marca: m })}>
+                      <Text style={[styles.marcaText, form.marca === m && styles.marcaTextActiva]}>{m}</Text>
+                    </TouchableOpacity>
+                  ))}
+                </ScrollView>
+                <TextInput style={styles.formInput} placeholder="Modelo Exacto (Ej: 17 Pro Max)" placeholderTextColor="#666" value={form.modelo} onChangeText={(t) => setForm({ ...form, modelo: t })} />
+                <View style={styles.row}>
+                  <TextInput style={[styles.formInput, { flex: 1, marginRight: 5 }]} placeholder="General" placeholderTextColor="#666" keyboardType="numeric" value={form.gen} onChangeText={(t) => setForm({ ...form, gen: t })} />
+                  <TextInput style={[styles.formInput, { flex: 1, marginLeft: 5 }]} placeholder="Punto Rojo" placeholderTextColor="#666" keyboardType="numeric" value={form.rojo} onChangeText={(t) => setForm({ ...form, rojo: t })} />
+                </View>
+                <View style={styles.row}>
+                  <TextInput style={[styles.formInput, { flex: 1, marginRight: 5 }]} placeholder="Mira x2" placeholderTextColor="#666" keyboardType="numeric" value={form.x2} onChangeText={(t) => setForm({ ...form, x2: t })} />
+                  <TextInput style={[styles.formInput, { flex: 1, marginLeft: 5 }]} placeholder="Mira x4" placeholderTextColor="#666" keyboardType="numeric" value={form.x4} onChangeText={(t) => setForm({ ...form, x4: t })} />
+                </View>
+
+                <View style={styles.dividerSmall} />
+
+                {form.marca === 'Apple' ? (
+                  <View>
+                    <Text style={[styles.label, { marginBottom: 5 }]}>AJUSTES APPLE</Text>
+                    <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ marginBottom: 10 }}>
+                      {['Refinado', 'Deslizante', 'Sencillo'].map(tipo => (
+                        <TouchableOpacity key={tipo} style={[styles.marcaBtn, form.tipoApple === tipo && styles.marcaBtnActiva]} onPress={() => setForm({ ...form, tipoApple: tipo })}>
+                          <Text style={[styles.marcaText, form.tipoApple === tipo && styles.marcaTextActiva]}>{tipo}</Text>
+                        </TouchableOpacity>
+                      ))}
+                    </ScrollView>
+                    <View style={styles.row}>
+                      <TextInput style={[styles.formInput, { flex: 1, marginRight: 4 }]} placeholder="Valor Ajuste" placeholderTextColor="#666" keyboardType="numeric" value={form.dpiValor} onChangeText={(t) => setForm({ ...form, dpiValor: t })} />
+                      <TextInput style={[styles.formInput, { flex: 1, marginHorizontal: 4 }]} placeholder="Botón %" placeholderTextColor="#666" keyboardType="numeric" value={form.boton} onChangeText={(t) => setForm({ ...form, boton: t })} />
+                      <TextInput style={[styles.formInput, { flex: 1, marginLeft: 4 }]} placeholder="Ctrl. Botón" placeholderTextColor="#666" value={form.supresor} onChangeText={(t) => setForm({ ...form, supresor: t })} />
                     </View>
-                    <Text style={styles.comSensi}>Gen: {comItem.gen} | Por: {comItem.autor}</Text>
-                    <View style={styles.dividerSmall} />
                   </View>
-                )
-              }
-              return null;
-            })
-          )}
-        </ScrollView>
-      )}
+                ) : (
+                  <View>
+                    <Text style={[styles.label, { marginBottom: 5 }]}>AJUSTES ANDROID</Text>
+                    <View style={styles.row}>
+                      <TextInput style={[styles.formInput, { flex: 1, marginRight: 4 }]} placeholder="DPI" placeholderTextColor="#666" keyboardType="numeric" value={form.dpi} onChangeText={(t) => setForm({ ...form, dpi: t })} />
+                      <TextInput style={[styles.formInput, { flex: 1, marginHorizontal: 4 }]} placeholder="Botón %" placeholderTextColor="#666" keyboardType="numeric" value={form.boton} onChangeText={(t) => setForm({ ...form, boton: t })} />
+                      <TextInput style={[styles.formInput, { flex: 1, marginLeft: 4 }]} placeholder="Supresor" placeholderTextColor="#666" value={form.supresor} onChangeText={(t) => setForm({ ...form, supresor: t })} />
+                    </View>
+                    <View style={styles.row}>
+                      <TextInput style={[styles.formInput, { flex: 1, marginRight: 4 }]} placeholder="Vel. Puntero" placeholderTextColor="#666" value={form.velPuntero} onChangeText={(t) => setForm({ ...form, velPuntero: t })} />
+                      <TextInput style={[styles.formInput, { flex: 1, marginLeft: 4 }]} placeholder="Acc. Interruptores" placeholderTextColor="#666" value={form.accesibilidad} onChangeText={(t) => setForm({ ...form, accesibilidad: t })} />
+                    </View>
+                  </View>
+                )}
+
+                <View style={styles.btnGroup}>
+                  <TouchableOpacity style={[styles.button, { flex: 1, marginRight: 5, backgroundColor: '#333' }]} onPress={() => setMostrarFormulario(false)}>
+                    <Text style={styles.buttonText}>CANCELAR</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity style={[styles.button, { flex: 1, marginLeft: 5 }]} onPress={guardarAporte}>
+                    <Text style={styles.buttonText}>GUARDAR</Text>
+                  </TouchableOpacity>
+                </View>
+              </View>
+            )}
+          </ScrollView>
+        ) : (
+          <ScrollView style={styles.cardCom}>
+            <Text style={styles.label}>TUS CONFIGURACIONES FAVORITAS</Text>
+            {favoritos.length === 0 ? (
+              <Text style={{color: '#666', textAlign: 'center', marginTop: 20}}>No tienes favoritos guardados.</Text>
+            ) : (
+              favoritos.map(fav => {
+                const ofi = DB_CONFIGS[fav];
+                if(ofi) {
+                  return (
+                    <View key={fav} style={styles.comItem}>
+                      <View style={styles.comHeader}>
+                        <Text style={styles.comModelo}>[Oficial] {fav}</Text>
+                        <TouchableOpacity onPress={() => toggleFav(fav)}><Text style={{fontSize: 16}}>⭐</Text></TouchableOpacity>
+                      </View>
+                      <Text style={styles.comSensi}>Gen: {ofi.gen} | DPI/Ajuste: {ofi.dpi}</Text>
+                      <View style={styles.dividerSmall} />
+                    </View>
+                  )
+                }
+                const comItem = comunidadDatos.find(c => c.id.toString() === fav);
+                if(comItem) {
+                  return (
+                    <View key={fav} style={styles.comItem}>
+                      <View style={styles.comHeader}>
+                        <Text style={styles.comModelo}>[Comunidad] {comItem.modelo}</Text>
+                        <TouchableOpacity onPress={() => toggleFav(fav)}><Text style={{fontSize: 16}}>⭐</Text></TouchableOpacity>
+                      </View>
+                      <Text style={styles.comSensi}>Gen: {comItem.gen} | Por: {comItem.autor}</Text>
+                      <View style={styles.dividerSmall} />
+                    </View>
+                  )
+                }
+                return null;
+              })
+            )}
+          </ScrollView>
+        )}
+      </View>
+      <View style={styles.footerBadge}>
+        <Text style={styles.footerText}>Creado por @betado_12 (YT & TikTok)</Text>
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#050505', alignItems: 'center', paddingTop: 50 },
-  toast: { position: 'absolute', top: 50, zIndex: 100, backgroundColor: '#00FF0033', padding: 10, borderRadius: 10, borderWidth: 1, borderColor: '#00FF00' },
+  container: { flex: 1, backgroundColor: '#050505', paddingTop: 50 },
+  contentContainer: { flex: 1, alignItems: 'center' },
+  footerBadge: { padding: 10, alignItems: 'center', backgroundColor: '#0A0A0A', width: '100%', borderTopWidth: 1, borderTopColor: '#222' },
+  footerText: { color: '#666', fontSize: 10, fontWeight: 'bold' },
+  toast: { position: 'absolute', top: 50, left: '10%', right: '10%', zIndex: 100, backgroundColor: '#00FF0033', padding: 10, borderRadius: 10, borderWidth: 1, borderColor: '#00FF00', alignItems: 'center' },
   toastText: { color: '#FFF', fontWeight: 'bold' },
   header: { alignItems: 'center', marginBottom: 10 },
   logo: { width: 85, height: 85, borderRadius: 18 },
   title: { fontSize: 18, fontWeight: '900', color: '#FF0000', marginTop: 5, letterSpacing: 2 },
-  tabContainer: { flexDirection: 'row', width: '90%', marginVertical: 10 },
+  tabContainer: { flexDirection: 'row', width: '90%', marginVertical: 10, alignSelf: 'center' },
   tab: { flex: 1, padding: 10, alignItems: 'center', borderBottomWidth: 2, borderBottomColor: '#222' },
   tabActive: { borderBottomColor: '#FF0000' },
   tabText: { color: '#666', fontWeight: 'bold', fontSize: 13 },
@@ -611,7 +619,7 @@ const styles = StyleSheet.create({
   btnCopiar: { backgroundColor: '#FF0000', padding: 14, borderRadius: 10, alignItems: 'center', marginTop: 15 },
   btnShare: { backgroundColor: '#FF0000', padding: 14, borderRadius: 10, alignItems: 'center', marginTop: 20 },
   btnText: { color: '#FFF', fontWeight: 'bold', fontSize: 12 },
-  cardCom: { width: '90%', backgroundColor: '#111', borderRadius: 20, padding: 15, borderWidth: 1, borderColor: '#222' },
+  cardCom: { width: '90%', backgroundColor: '#111', borderRadius: 20, padding: 15, borderWidth: 1, borderColor: '#222', alignSelf: 'center' },
   filterRow: { flexDirection: 'row', marginBottom: 15 },
   filterBtn: { flex: 1, backgroundColor: '#1A1A1A', padding: 8, alignItems: 'center', borderWidth: 1, borderColor: '#333' },
   filterBtnAct: { backgroundColor: '#FF000033', borderColor: '#FF0000' },
