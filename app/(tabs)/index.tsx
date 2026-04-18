@@ -112,47 +112,50 @@ const DB_CONFIGS: Record<string, Config> = {
   "Xiaomi 13T Pro": { gen: '200', rojo: '196', x2: '192', x4: '188', awm: '50', c360: '80', dpi: '680', boton: '42', sup: '0.2ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 46.0 cm/s | Dem: 0.00s | Infinity)' },
   "Xiaomi 14 Ultra": { gen: '200', rojo: '200', x2: '198', x4: '195', awm: '50', c360: '80', dpi: '720', boton: '38', sup: 'Desactivado', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 68.0 cm/s | Dem: 0.00s | Infinity)' },
   "Genérica Xiaomi": { gen: '194', rojo: '188', x2: '182', x4: '178', awm: '50', c360: '80', dpi: '550', boton: '48', sup: '0.6ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 10.0 cm/s | Dem: 0.08s | 5 Rep)' },
-  "Tecno Spark 10 Pro": { gen: '192', rojo: '188', x2: '182', x4: '178', awm: '50', c360: '80', dpi: '480', boton: '50', sup: '0.8ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 3.50 cm/s | Dem: 0.15s | 3 Rep)' },
-  "Tecno Spark 20": { gen: '190', rojo: '185', x2: '180', x4: '175', awm: '50', c360: '80', dpi: '460', boton: '52', sup: '0.8ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 2.80 cm/s | Dem: 0.20s | 3 Rep)' },
-  "Tecno Spark 20 Pro": { gen: '194', rojo: '190', x2: '185', x4: '180', awm: '50', c360: '80', dpi: '500', boton: '48', sup: '0.6ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 6.50 cm/s | Dem: 0.10s | 5 Rep)' },
-  "Tecno Spark 20 Pro+": { gen: '195', rojo: '192', x2: '188', x4: '182', awm: '50', c360: '80', dpi: '520', boton: '46', sup: '0.5ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 11.0 cm/s | Dem: 0.08s | 6 Rep)' },
-  "Tecno Spark 30 (2026)": { gen: '198', rojo: '195', x2: '190', x4: '185', awm: '50', c360: '80', dpi: '550', boton: '44', sup: '0.4ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 15.5 cm/s | Dem: 0.05s | 8 Rep)' },
-  "Tecno Pova 5": { gen: '192', rojo: '188', x2: '182', x4: '178', awm: '50', c360: '80', dpi: '500', boton: '50', sup: '0.7ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 7.00 cm/s | Dem: 0.10s | 5 Rep)' },
-  "Tecno Pova 5 Pro": { gen: '195', rojo: '192', x2: '188', x4: '184', awm: '50', c360: '80', dpi: '550', boton: '46', sup: '0.5ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 12.5 cm/s | Dem: 0.08s | 6 Rep)' },
-  "Tecno Pova 6": { gen: '196', rojo: '192', x2: '188', x4: '184', awm: '50', c360: '80', dpi: '580', boton: '45', sup: '0.5ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 16.0 cm/s | Dem: 0.05s | 8 Rep)' },
-  "Tecno Pova 6 Pro": { gen: '198', rojo: '195', x2: '190', x4: '186', awm: '50', c360: '80', dpi: '600', boton: '43', sup: '0.3ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 22.0 cm/s | Dem: 0.02s | 10 Rep)' },
-  "Tecno Pova 6 Neo": { gen: '195', rojo: '190', x2: '185', x4: '180', awm: '50', c360: '80', dpi: '550', boton: '46', sup: '0.6ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 10.0 cm/s | Dem: 0.08s | 5 Rep)' },
-  "Tecno Camon 20": { gen: '192', rojo: '188', x2: '182', x4: '178', awm: '50', c360: '80', dpi: '480', boton: '48', sup: '0.8ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 4.50 cm/s | Dem: 0.15s | 4 Rep)' },
-  "Tecno Camon 20 Pro": { gen: '195', rojo: '190', x2: '185', x4: '180', awm: '50', c360: '80', dpi: '520', boton: '46', sup: '0.6ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 9.50 cm/s | Dem: 0.10s | 5 Rep)' },
-  "Tecno Camon 20 Premier": { gen: '196', rojo: '194', x2: '188', x4: '182', awm: '50', c360: '80', dpi: '550', boton: '44', sup: '0.4ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 14.0 cm/s | Dem: 0.05s | 8 Rep)' },
-  "Tecno Spark 30 (2026)": { gen: '198', rojo: '195', x2: '190', x4: '185', awm: '50', c360: '80', dpi: '550', boton: '44', sup: '0.4ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 15.5 cm/s | Dem: 0.05s | 8 Rep)', modoSports: 'Activado' },
-  "Tecno Camon 30": { gen: '196', rojo: '192', x2: '188', x4: '182', awm: '50', c360: '80', dpi: '550', boton: '45', sup: '0.5ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 18.5 cm/s | Dem: 0.02s | 8 Rep)', modoSports: 'Activado' },
-  "Tecno Camon 30 Pro": { gen: '198', rojo: '195', x2: '190', x4: '185', awm: '50', c360: '80', dpi: '600', boton: '43', sup: '0.3ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 26.0 cm/s | Dem: 0.01s | 10 Rep)', modoSports: 'Activado' },
-  "Tecno Camon 30 Premier": { gen: '200', rojo: '198', x2: '194', x4: '188', awm: '50', c360: '80', dpi: '650', boton: '42', sup: '0.2ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 32.5 cm/s | Dem: 0.00s | 15 Rep)', modoSports: 'Activado' },
-  "Tecno Camon 40 4G": { gen: '195', rojo: '192', x2: '163', x4: '182', awm: '50', c360: '80', dpi: '500', boton: '44', sup: '0.7ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 0.90 cm/s | Dem: 0.70s | 2 Rep)', modoSports: 'Activado (Modo Competitivo)' },
-  "Tecno Camon 40 Pro (2026)": { gen: '200', rojo: '200', x2: '198', x4: '195', awm: '60', c360: '90', dpi: '700', boton: '40', sup: 'Desactivado', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 40.0 cm/s | Dem: 0.00s | Infinity)' },
-  "Tecno Camon 40 Premier (2026)": { gen: '200', rojo: '200', x2: '200', x4: '198', awm: '50', c360: '80', dpi: '720', boton: '38', sup: 'Desactivado', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 52.0 cm/s | Dem: 0.00s | Infinity)' },
-  "Genérica Tecno": { gen: '192', rojo: '188', x2: '182', x4: '178', awm: '50', c360: '80', dpi: '500', boton: '48', sup: '0.6ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 8.50 cm/s | Dem: 0.10s | 5 Rep)' },
-  "Infinix Hot 20": { gen: '188', rojo: '182', x2: '178', x4: '172', awm: '50', c360: '80', dpi: '450', boton: '55', sup: '0.8ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 2.50 cm/s | Dem: 0.20s | 3 Rep)' },
-  "Infinix Hot 20S": { gen: '190', rojo: '185', x2: '180', x4: '175', awm: '50', c360: '80', dpi: '480', boton: '50', sup: '0.8ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 3.50 cm/s | Dem: 0.15s | 4 Rep)' },
-  "Infinix Note 20": { gen: '192', rojo: '188', x2: '182', x4: '178', awm: '50', c360: '80', dpi: '500', boton: '48', sup: '0.7ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 5.00 cm/s | Dem: 0.10s | 5 Rep)' },
-  "Infinix Note 20 Pro": { gen: '194', rojo: '190', x2: '185', x4: '180', awm: '50', c360: '80', dpi: '520', boton: '46', sup: '0.6ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 8.50 cm/s | Dem: 0.08s | 6 Rep)' },
-  "Infinix Zero 20": { gen: '196', rojo: '192', x2: '188', x4: '182', awm: '50', c360: '80', dpi: '550', boton: '45', sup: '0.5ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 12.0 cm/s | Dem: 0.05s | 8 Rep)' },
-  "Infinix Zero Ultra": { gen: '198', rojo: '196', x2: '192', x4: '188', awm: '50', c360: '80', dpi: '600', boton: '43', sup: '0.3ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 18.5 cm/s | Dem: 0.02s | 10 Rep)' },
-  "Infinix Hot 30": { gen: '190', rojo: '185', x2: '180', x4: '175', awm: '50', c360: '80', dpi: '460', boton: '52', sup: '0.8ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 3.00 cm/s | Dem: 0.20s | 3 Rep)' },
-  "Infinix Hot 40": { gen: '192', rojo: '188', x2: '182', x4: '178', awm: '50', c360: '80', dpi: '480', boton: '50', sup: '0.7ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 5.50 cm/s | Dem: 0.15s | 4 Rep)' },
-  "Infinix Hot 40 Pro": { gen: '195', rojo: '192', x2: '188', x4: '182', awm: '50', c360: '80', dpi: '520', boton: '46', sup: '0.5ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 10.5 cm/s | Dem: 0.08s | 6 Rep)' },
-  "Infinix Hot 50 (2026)": { gen: '198', rojo: '195', x2: '190', x4: '185', awm: '50', c360: '80', dpi: '550', boton: '44', sup: '0.4ms', velPuntero: 'Al máximo', accesibilidad: 'Escaneo Auto (Vel: 0.30s | Dem: 0.20s | 4 Rep)' },
-  "Infinix Note 30": { gen: '192', rojo: '188', x2: '182', x4: '178', awm: '50', c360: '80', dpi: '480', boton: '48', sup: '0.8ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 4.50 cm/s | Dem: 0.15s | 4 Rep)' },
-  "Infinix Note 30 Pro": { gen: '195', rojo: '190', x2: '185', x4: '180', awm: '50', c360: '80', dpi: '520', boton: '45', sup: '0.6ms', velPuntero: 'Al máximo', accesibilidad: 'Escaneo Auto (Vel: 0.40s | Dem: 0.30s | 3 Rep)' },
-  "Infinix Note 30 VIP": { gen: '196', rojo: '194', x2: '188', x4: '184', awm: '50', c360: '80', dpi: '550', boton: '44', sup: '0.4ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 18.5 cm/s | Dem: 0.02s | 8 Rep)' },
-  "Infinix Note 40": { gen: '195', rojo: '190', x2: '185', x4: '180', awm: '50', c360: '80', dpi: '520', boton: '46', sup: '0.6ms', velPuntero: 'Al máximo', accesibilidad: 'Escaneo Auto (Vel: 0.30s | Dem: 0.20s | 3 Rep)' },
-  "Infinix Note 40 Pro": { gen: '198', rojo: '195', x2: '190', x4: '185', awm: '50', c360: '80', dpi: '580', boton: '43', sup: '0.4ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 24.5 cm/s | Dem: 0.01s | 10 Rep)' },
-  "Infinix Note 40 Pro+": { gen: '200', rojo: '196', x2: '192', x4: '188', awm: '50', c360: '80', dpi: '600', boton: '42', sup: '0.2ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 33.0 cm/s | Dem: 0.00s | 15 Rep)' },
-  "Infinix Note 50 VIP (2026)": { gen: '200', rojo: '200', x2: '196', x4: '192', awm: '50', c360: '80', dpi: '650', boton: '40', sup: 'Desactivado', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 45.0 cm/s | Dem: 0.00s | Infinity)' },
-  "Infinix GT 10 Pro": { gen: '198', rojo: '195', x2: '190', x4: '185', awm: '50', c360: '80', dpi: '600', boton: '43', sup: '0.3ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 28.0 cm/s | Dem: 0.00s | 12 Rep)' },
-  "Infinix GT 20 Pro": { gen: '200', rojo: '198', x2: '194', x4: '190', awm: '50', c360: '80', dpi: '650', boton: '40', sup: '0.2ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 42.0 cm/s | Dem: 0.00s | Infinity)' },
-  "Genérica Infinix": { gen: '192', rojo: '188', x2: '182', x4: '178', awm: '50', c360: '80', dpi: '500', boton: '48', sup: '0.6ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 9.00 cm/s | Dem: 0.10s | 5 Rep)' },
+  // TECNO
+  "Tecno Spark 10 Pro": { gen: '192', rojo: '188', x2: '182', x4: '178', awm: '50', c360: '80', dpi: '480', boton: '50', sup: '0.8ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 3.50 cm/s | Dem: 0.15s | 3 Rep)', modoSports: 'Esports: ON | Toque: +2 | Desliz: +2 | Micro: OFF' },
+  "Tecno Spark 20": { gen: '190', rojo: '185', x2: '180', x4: '175', awm: '50', c360: '80', dpi: '460', boton: '52', sup: '0.8ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 2.80 cm/s | Dem: 0.20s | 3 Rep)', modoSports: 'Esports: ON | Toque: +2 | Desliz: +2 | Micro: OFF' },
+  "Tecno Spark 20 Pro": { gen: '194', rojo: '190', x2: '185', x4: '180', awm: '50', c360: '80', dpi: '500', boton: '48', sup: '0.6ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 6.50 cm/s | Dem: 0.10s | 5 Rep)', modoSports: 'Esports: ON | Toque: +2 | Desliz: +2 | Micro: OFF' },
+  "Tecno Spark 20 Pro+": { gen: '195', rojo: '192', x2: '188', x4: '182', awm: '50', c360: '80', dpi: '520', boton: '46', sup: '0.5ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 11.0 cm/s | Dem: 0.08s | 6 Rep)', modoSports: 'Esports: ON | Toque: +2 | Desliz: +2 | Micro: OFF' },
+  "Tecno Spark 30 (2026)": { gen: '198', rojo: '195', x2: '190', x4: '185', awm: '50', c360: '80', dpi: '550', boton: '44', sup: '0.4ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 15.5 cm/s | Dem: 0.05s | 8 Rep)', modoSports: 'Esports: ON | Toque: +2 | Desliz: +2 | Micro: OFF' },
+  "Tecno Pova 5": { gen: '192', rojo: '188', x2: '182', x4: '178', awm: '50', c360: '80', dpi: '500', boton: '50', sup: '0.7ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 7.00 cm/s | Dem: 0.10s | 5 Rep)', modoSports: 'Esports: ON | Toque: +2 | Desliz: +2 | Micro: OFF' },
+  "Tecno Pova 5 Pro": { gen: '195', rojo: '192', x2: '188', x4: '184', awm: '50', c360: '80', dpi: '550', boton: '46', sup: '0.5ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 12.5 cm/s | Dem: 0.08s | 6 Rep)', modoSports: 'Esports: ON | Toque: +2 | Desliz: +2 | Micro: OFF' },
+  "Tecno Pova 6": { gen: '196', rojo: '192', x2: '188', x4: '184', awm: '50', c360: '80', dpi: '580', boton: '45', sup: '0.5ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 16.0 cm/s | Dem: 0.05s | 8 Rep)', modoSports: 'Esports: ON | Toque: +2 | Desliz: +2 | Micro: OFF' },
+  "Tecno Pova 6 Pro": { gen: '198', rojo: '195', x2: '190', x4: '186', awm: '50', c360: '80', dpi: '600', boton: '43', sup: '0.3ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 22.0 cm/s | Dem: 0.02s | 10 Rep)', modoSports: 'Esports: ON | Toque: +2 | Desliz: +2 | Micro: OFF' },
+  "Tecno Pova 6 Neo": { gen: '195', rojo: '190', x2: '185', x4: '180', awm: '50', c360: '80', dpi: '550', boton: '46', sup: '0.6ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 10.0 cm/s | Dem: 0.08s | 5 Rep)', modoSports: 'Esports: ON | Toque: +2 | Desliz: +2 | Micro: OFF' },
+  "Tecno Camon 20": { gen: '192', rojo: '188', x2: '182', x4: '178', awm: '50', c360: '80', dpi: '480', boton: '48', sup: '0.8ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 4.50 cm/s | Dem: 0.15s | 4 Rep)', modoSports: 'Esports: ON | Toque: +2 | Desliz: +2 | Micro: OFF' },
+  "Tecno Camon 20 Pro": { gen: '195', rojo: '190', x2: '185', x4: '180', awm: '50', c360: '80', dpi: '520', boton: '46', sup: '0.6ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 9.50 cm/s | Dem: 0.10s | 5 Rep)', modoSports: 'Esports: ON | Toque: +2 | Desliz: +2 | Micro: OFF' },
+  "Tecno Camon 20 Premier": { gen: '196', rojo: '194', x2: '188', x4: '182', awm: '50', c360: '80', dpi: '550', boton: '44', sup: '0.4ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 14.0 cm/s | Dem: 0.05s | 8 Rep)', modoSports: 'Esports: ON | Toque: +2 | Desliz: +2 | Micro: OFF' },
+  "Tecno Camon 30": { gen: '196', rojo: '192', x2: '188', x4: '182', awm: '50', c360: '80', dpi: '550', boton: '45', sup: '0.5ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 18.5 cm/s | Dem: 0.02s | 8 Rep)', modoSports: 'Esports: ON | Toque: +2 | Desliz: +2 | Micro: OFF' },
+  "Tecno Camon 30 Pro": { gen: '198', rojo: '195', x2: '190', x4: '185', awm: '50', c360: '80', dpi: '600', boton: '43', sup: '0.3ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 26.0 cm/s | Dem: 0.01s | 10 Rep)', modoSports: 'Esports: ON | Toque: +2 | Desliz: +2 | Micro: OFF' },
+  "Tecno Camon 30 Premier": { gen: '200', rojo: '198', x2: '194', x4: '188', awm: '50', c360: '80', dpi: '650', boton: '42', sup: '0.2ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 32.5 cm/s | Dem: 0.00s | 15 Rep)', modoSports: 'Esports: ON | Toque: +2 | Desliz: +2 | Micro: OFF' },
+  "Tecno Camon 40 4G": { gen: '195', rojo: '192', x2: '163', x4: '182', awm: '50', c360: '80', dpi: '500', boton: '44', sup: '0.7ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 0.90 cm/s | Dem: 0.70s | 2 Rep)', modoSports: 'Esports: ON | Toque: +2 | Desliz: +2 | Micro: OFF' },
+  "Tecno Camon 40 (2026)": { gen: '195', rojo: '192', x2: '163', x4: '182', awm: '50', c360: '80', dpi: '500', boton: '44', sup: '0.7ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 0.90 cm/s | Dem: 0.70s | 2 Rep)', modoSports: 'Esports: ON | Toque: +2 | Desliz: +2 | Micro: OFF' },
+  "Tecno Camon 40 Pro (2026)": { gen: '200', rojo: '200', x2: '198', x4: '195', awm: '60', c360: '90', dpi: '700', boton: '40', sup: 'Desactivado', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 40.0 cm/s | Dem: 0.00s | Infinity)', modoSports: 'Esports: ON | Toque: +2 | Desliz: +2 | Micro: OFF' },
+  "Tecno Camon 40 Premier (2026)": { gen: '200', rojo: '200', x2: '200', x4: '198', awm: '50', c360: '80', dpi: '720', boton: '38', sup: 'Desactivado', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 52.0 cm/s | Dem: 0.00s | Infinity)', modoSports: 'Esports: ON | Toque: +2 | Desliz: +2 | Micro: OFF' },
+  "Genérica Tecno": { gen: '192', rojo: '188', x2: '182', x4: '178', awm: '50', c360: '80', dpi: '500', boton: '48', sup: '0.6ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 8.50 cm/s | Dem: 0.10s | 5 Rep)', modoSports: 'Esports: ON | Toque: +2 | Desliz: +2 | Micro: OFF' },
+  
+  // INFINIX
+  "Infinix Hot 20": { gen: '188', rojo: '182', x2: '178', x4: '172', awm: '50', c360: '80', dpi: '450', boton: '55', sup: '0.8ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 2.50 cm/s | Dem: 0.20s | 3 Rep)', modoSports: 'Esports: ON | Toque: +2 | Desliz: +2 | Micro: OFF' },
+  "Infinix Hot 20S": { gen: '190', rojo: '185', x2: '180', x4: '175', awm: '50', c360: '80', dpi: '480', boton: '50', sup: '0.8ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 3.50 cm/s | Dem: 0.15s | 4 Rep)', modoSports: 'Esports: ON | Toque: +2 | Desliz: +2 | Micro: OFF' },
+  "Infinix Note 20": { gen: '192', rojo: '188', x2: '182', x4: '178', awm: '50', c360: '80', dpi: '500', boton: '48', sup: '0.7ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 5.00 cm/s | Dem: 0.10s | 5 Rep)', modoSports: 'Esports: ON | Toque: +2 | Desliz: +2 | Micro: OFF' },
+  "Infinix Note 20 Pro": { gen: '194', rojo: '190', x2: '185', x4: '180', awm: '50', c360: '80', dpi: '520', boton: '46', sup: '0.6ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 8.50 cm/s | Dem: 0.08s | 6 Rep)', modoSports: 'Esports: ON | Toque: +2 | Desliz: +2 | Micro: OFF' },
+  "Infinix Zero 20": { gen: '196', rojo: '192', x2: '188', x4: '182', awm: '50', c360: '80', dpi: '550', boton: '45', sup: '0.5ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 12.0 cm/s | Dem: 0.05s | 8 Rep)', modoSports: 'Esports: ON | Toque: +2 | Desliz: +2 | Micro: OFF' },
+  "Infinix Zero Ultra": { gen: '198', rojo: '196', x2: '192', x4: '188', awm: '50', c360: '80', dpi: '600', boton: '43', sup: '0.3ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 18.5 cm/s | Dem: 0.02s | 10 Rep)', modoSports: 'Esports: ON | Toque: +2 | Desliz: +2 | Micro: OFF' },
+  "Infinix Hot 30": { gen: '190', rojo: '185', x2: '180', x4: '175', awm: '50', c360: '80', dpi: '460', boton: '52', sup: '0.8ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 3.00 cm/s | Dem: 0.20s | 3 Rep)', modoSports: 'Esports: ON | Toque: +2 | Desliz: +2 | Micro: OFF' },
+  "Infinix Hot 40": { gen: '192', rojo: '188', x2: '182', x4: '178', awm: '50', c360: '80', dpi: '480', boton: '50', sup: '0.7ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 5.50 cm/s | Dem: 0.15s | 4 Rep)', modoSports: 'Esports: ON | Toque: +2 | Desliz: +2 | Micro: OFF' },
+  "Infinix Hot 40 Pro": { gen: '195', rojo: '192', x2: '188', x4: '182', awm: '50', c360: '80', dpi: '520', boton: '46', sup: '0.5ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 10.5 cm/s | Dem: 0.08s | 6 Rep)', modoSports: 'Esports: ON | Toque: +2 | Desliz: +2 | Micro: OFF' },
+  "Infinix Hot 50 (2026)": { gen: '198', rojo: '195', x2: '190', x4: '185', awm: '50', c360: '80', dpi: '550', boton: '44', sup: '0.4ms', velPuntero: 'Al máximo', accesibilidad: 'Escaneo Auto (Vel: 0.30s | Dem: 0.20s | 4 Rep)', modoSports: 'Esports: ON | Toque: +2 | Desliz: +2 | Micro: OFF' },
+  "Infinix Note 30": { gen: '192', rojo: '188', x2: '182', x4: '178', awm: '50', c360: '80', dpi: '480', boton: '48', sup: '0.8ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 4.50 cm/s | Dem: 0.15s | 4 Rep)', modoSports: 'Esports: ON | Toque: +2 | Desliz: +2 | Micro: OFF' },
+  "Infinix Note 30 Pro": { gen: '195', rojo: '190', x2: '185', x4: '180', awm: '50', c360: '80', dpi: '520', boton: '45', sup: '0.6ms', velPuntero: 'Al máximo', accesibilidad: 'Escaneo Auto (Vel: 0.40s | Dem: 0.30s | 3 Rep)', modoSports: 'Esports: ON | Toque: +2 | Desliz: +2 | Micro: OFF' },
+  "Infinix Note 30 VIP": { gen: '196', rojo: '194', x2: '188', x4: '184', awm: '50', c360: '80', dpi: '550', boton: '44', sup: '0.4ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 18.5 cm/s | Dem: 0.02s | 8 Rep)', modoSports: 'Esports: ON | Toque: +2 | Desliz: +2 | Micro: OFF' },
+  "Infinix Note 40": { gen: '195', rojo: '190', x2: '185', x4: '180', awm: '50', c360: '80', dpi: '520', boton: '46', sup: '0.6ms', velPuntero: 'Al máximo', accesibilidad: 'Escaneo Auto (Vel: 0.30s | Dem: 0.20s | 3 Rep)', modoSports: 'Esports: ON | Toque: +2 | Desliz: +2 | Micro: OFF' },
+  "Infinix Note 40 Pro": { gen: '198', rojo: '195', x2: '190', x4: '185', awm: '50', c360: '80', dpi: '580', boton: '43', sup: '0.4ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 24.5 cm/s | Dem: 0.01s | 10 Rep)', modoSports: 'Esports: ON | Toque: +2 | Desliz: +2 | Micro: OFF' },
+  "Infinix Note 40 Pro+": { gen: '200', rojo: '196', x2: '192', x4: '188', awm: '50', c360: '80', dpi: '600', boton: '42', sup: '0.2ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 33.0 cm/s | Dem: 0.00s | 15 Rep)', modoSports: 'Esports: ON | Toque: +2 | Desliz: +2 | Micro: OFF' },
+  "Infinix Note 50 VIP (2026)": { gen: '200', rojo: '200', x2: '196', x4: '192', awm: '50', c360: '80', dpi: '650', boton: '40', sup: 'Desactivado', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 45.0 cm/s | Dem: 0.00s | Infinity)', modoSports: 'Esports: ON | Toque: +2 | Desliz: +2 | Micro: OFF' },
+  "Infinix GT 10 Pro": { gen: '198', rojo: '195', x2: '190', x4: '185', awm: '50', c360: '80', dpi: '600', boton: '43', sup: '0.3ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 28.0 cm/s | Dem: 0.00s | 12 Rep)', modoSports: 'Esports: ON | Toque: +2 | Desliz: +2 | Micro: OFF' },
+  "Infinix GT 20 Pro": { gen: '200', rojo: '198', x2: '194', x4: '190', awm: '50', c360: '80', dpi: '650', boton: '40', sup: '0.2ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 42.0 cm/s | Dem: 0.00s | Infinity)', modoSports: 'Esports: ON | Toque: +2 | Desliz: +2 | Micro: OFF' },
+  "Genérica Infinix": { gen: '192', rojo: '188', x2: '182', x4: '178', awm: '50', c360: '80', dpi: '500', boton: '48', sup: '0.6ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 9.00 cm/s | Dem: 0.10s | 5 Rep)', modoSports: 'Esports: ON | Toque: +2 | Desliz: +2 | Micro: OFF' },
   "Moto G60": { gen: '190', rojo: '185', x2: '180', x4: '175', awm: '50', c360: '80', dpi: '450', boton: '55', sup: '1.0ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 6.00 cm/s | Dem: 0.15s | 4 Rep)' },
   "Moto G200": { gen: '195', rojo: '190', x2: '185', x4: '180', awm: '50', c360: '80', dpi: '550', boton: '48', sup: '0.6ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 22.0 cm/s | Dem: 0.02s | 8 Rep)' },
   "Edge 30": { gen: '194', rojo: '188', x2: '182', x4: '178', awm: '50', c360: '80', dpi: '500', boton: '48', sup: '0.6ms', velPuntero: 'Al máximo', accesibilidad: 'Búsqueda Puntual (Vel: 18.0 cm/s | Dem: 0.05s | 6 Rep)' },
@@ -204,9 +207,10 @@ interface ComAporte {
 }
 
 export default function App() {
+  const [dropdownAbierto, setDropdownAbierto] = useState<boolean>(true);
   const [modelo, setModelo] = useState<string>('');
   const [marcaActiva, setMarcaActiva] = useState<string>('');
- const [sensi, setSensi] = useState({ gen: '', rojo: '', x2: '', x4: '', awm: '', c360: '', modoSports: '' });
+  const [sensi, setSensi] = useState({ gen: '', rojo: '', x2: '', x4: '', awm: '', c360: '', modoSports: '' });
   const [dpi, setDpi] = useState<string>('');
   const [boton, setBoton] = useState<string>('');
   const [supresor, setSupresor] = useState<string>('');
@@ -327,8 +331,8 @@ export default function App() {
   const seleccionarMarca = (marca: string) => {
     setMarcaActiva(marcaActiva === marca ? '' : marca);
     setConfigCargada(false); setConfigNoEncontrada(false); setModelo(''); setSensiAuto(null);
+    setDropdownAbierto(true);
   };
-
   const guardarAporte = async () => {
     if (!form.autor || !form.modelo || !form.gen) { showToast("Llena los campos"); return; }
     const isAppleDevice = form.marca === 'Apple' || form.marca === 'Tablets'; 
@@ -393,12 +397,23 @@ export default function App() {
             {marcaActiva === '' ? (
               <TextInput style={styles.input} placeholder="Busca tu modelo..." placeholderTextColor="#666" value={modelo} onChangeText={(t) => { setModelo(t); buscarConfiguracion(t); }} />
             ) : (
-              <View style={styles.dropdown}>
-                <ScrollView nestedScrollEnabled={true} style={{ maxHeight: 180 }}>
-                  {MODELOS_POR_MARCA[marcaActiva]?.map((mod) => (
-                    <TouchableOpacity key={mod} style={styles.dropItem} onPress={() => buscarConfiguracion(mod)}><Text style={styles.dropText}>{mod}</Text></TouchableOpacity>
-                  ))}
-                </ScrollView>
+              <View style={{ width: '90%' }}>
+                <TouchableOpacity style={styles.dropdownToggle} onPress={() => setDropdownAbierto(!dropdownAbierto)}>
+                  <Text style={styles.dropdownToggleText}>{modelo ? modelo : `Modelos ${marcaActiva}`}</Text>
+                  <Text style={styles.dropdownToggleIcon}>{dropdownAbierto ? '▲' : '▼'}</Text>
+                </TouchableOpacity>
+
+                {dropdownAbierto && (
+                  <View style={[styles.dropdown, { width: '100%', marginTop: 5 }]}>
+                    <ScrollView nestedScrollEnabled={true} style={{ maxHeight: 180 }}>
+                      {MODELOS_POR_MARCA[marcaActiva]?.map((mod) => (
+                        <TouchableOpacity key={mod} style={styles.dropItem} onPress={() => { buscarConfiguracion(mod); setDropdownAbierto(false); }}>
+                          <Text style={styles.dropText}>{mod}</Text>
+                        </TouchableOpacity>
+                      ))}
+                    </ScrollView>
+                  </View>
+                )}
               </View>
             )}
 
@@ -591,4 +606,7 @@ const styles = StyleSheet.create({
   footerHighlight: { color: '#FF0000', textShadowColor: '#FF0000', textShadowOffset: { width: 0, height: 0 }, textShadowRadius: 15 },
   glowLine: { width: 100, height: 2, backgroundColor: '#FF0000', marginVertical: 4, borderRadius: 2, shadowColor: "#FF0000", shadowOffset: { width: 0, height: 0 }, shadowOpacity: 1, shadowRadius: 5 },
   footerSub: { color: '#AAA', fontSize: 10, fontWeight: 'bold', marginTop: 2, letterSpacing: 3 },
+  dropdownToggle: { flexDirection: 'row', justifyContent: 'space-between', backgroundColor: '#111', padding: 15, borderRadius: 10, borderWidth: 1, borderColor: '#FF000033' },
+  dropdownToggleText: { color: '#FFF', fontWeight: 'bold', fontSize: 13 },
+  dropdownToggleIcon: { color: '#FF0000', fontSize: 12 },
 });
